@@ -1,6 +1,10 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import TutorialPage from './pages/TutorialPage';
+import Completed from './pages/Completed';
 import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
 
 function App() {
   return (
@@ -18,7 +22,14 @@ function App() {
         >
           Learn React
         </a>
+
       </header>
+      <Router>
+          <Route exact path="/" component={() => <HomePage/>}/>
+          {/*for link www.x.com/tutorial/1 => id '1' will be passed to TutorialPage component*/}
+          {/*<Route path="/tutorial/:tutorialStep" render={({ match }) => <TutorialPage id={match.params.tutorialStep: string}/>}/>*/}
+          <Route exact path="/success" component={() => <Completed/>}/>
+      </Router>
     </div>
   );
 }
