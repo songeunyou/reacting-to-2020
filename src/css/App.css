@@ -1,39 +1,39 @@
 .App {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: black;
+.tutorial-page {
+  position: relative;
+  width: 100vw;
+  height: 80%;
+  padding: 60px;
+  display: flex;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tutorial-page .info .instructions {
+  margin: 20px;
+  border-radius: 8px;
+  padding: 40px 60px;
+  background: white;
+  box-shadow: 0px 6px 35px -8px rgba(0, 0, 0, 0.2);
+}
+.tutorial-page .info .code-editor {
+  margin: 20px;
+  border-radius: 8px;
+  padding: 40px 60px;
+  background: white;
+  box-shadow: 0px 6px 35px -8px rgba(0, 0, 0, 0.2);
+}
+.tutorial-page .visual {
+  border-radius: 4px;
+  margin: 20px;
+  width: 100%;
+  background: blue;
 }
 
 /*# sourceMappingURL=App.css.map */

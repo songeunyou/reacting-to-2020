@@ -5,6 +5,7 @@ import '../css/App.css';
 function HomePage() {
   return (
     <div className="home-page">
+        WELCOME TO THE 2020 DUMPSTER FIRE
     </div>
   );
 }
