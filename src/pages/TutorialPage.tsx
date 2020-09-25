@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/App.css';
 import Callout from '../components/Callout';
+import CodeEditor from '../components/CodeEditor';
 
 interface TutorialProps {
     id: string;
@@ -18,6 +18,7 @@ function TutorialPage({id}: TutorialProps) {
                 <Callout emoji="💩" text="This is a callout, for little texts you might wanna add about things!"/>
             </div>
             <div className="code-editor">
+                <CodeEditor />
             </div>
         </div>
         <div className="visual">
