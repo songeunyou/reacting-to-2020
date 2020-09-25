@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'mixins';
+@import 'fonts';
 
 .App {
     position: relative;
@@ -9,7 +10,67 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #E3C5AC;
 }
+
+p {
+    margin: 0px;
+}
+
+/*---------- HOMEPAGE ----------*/
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .emojis {
+        font-size: 50px;
+        margin: 0px;
+    }
+
+    .title {
+        font-family: ObviouslyWide;
+        font-size: 50px;
+        color: white;
+        margin: 20px 0px 26px 0px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        background: $main-bg;
+        color: $peach;
+        border-radius: 6px;
+        font-family: monospace;
+        padding: 12px 20px;
+        box-shadow: 0px 4px 10px -4px rgba(20,9,36,0.8);
+    }
+
+    .start-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border: solid 1px white;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        margin-top: 40px;
+    }
+
+    .credits {
+        position: fixed;
+        bottom: 0px;
+        margin: 40px;
+        p {
+            font-family: Obviously;
+            color: white;
+            margin: 4px;
+        }
+    }
+}
+
+/*---------- TUTORIAL PAGE ----------*/
 
 .tutorial-page {
     position: relative;
@@ -19,18 +80,43 @@
     display: flex;
 
     .info {
+        margin: 20px 10px;
         .instructions {
             @include block;
+            @include paragraph;
+            background: $secondary-bg;
+            border-radius: 6px 6px 0px 0px;
         }
         .code-editor {
             @include block;
+            background: $main-bg;
+            border-radius: 0px 0px 6px 6px;
         }
     }
 
     .visual {
-        border-radius: 4px;
-        margin: 20px;
+        border-radius: 6px;
+        margin: 20px 10px;
         width: 100%;
         background: blue;
+    }
+}
+
+.callout {
+    background: $main-bg;
+    border-radius: 4px;
+    display: flex;
+    padding: 10px 12px;
+    margin: 20px 0px;
+
+    p {
+        text-align: left;
+        color: $peach;
+        font-size: 14px;
+        font-family: monospace;
+
+        &:first-of-type {
+            margin-right: 16px;
+        }
     }
 }
