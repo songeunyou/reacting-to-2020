@@ -1,22 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import '../css/App.css';
+import Callout from '../components/Callout';
 
-interface CalloutProps {
-    emoji: string;
-    text: string;
+interface TutorialProps {
+    id: string;
 }
 
-function Callout({emoji, text}: CalloutProps) {
-    return (
-        <div className="callout">
-            <p>{emoji}</p>
-            <p>{text}</p>
-        </div>
-    );
-}
+// TutorialPage needs to be rewritten so that depending on which module you are on (different id),
+// Info and visuals are swapped out
 
-function TutorialPage() {
+function TutorialPage({id}: TutorialProps) {
   return (
     <div className="tutorial-page">
         <div className="info">
