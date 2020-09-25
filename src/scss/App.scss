@@ -17,6 +17,8 @@ p {
     margin: 0px;
 }
 
+/*---------- HOMEPAGE ----------*/
+
 .home-page {
     display: flex;
     flex-direction: column;
@@ -37,7 +39,7 @@ p {
     .subtitle {
         font-size: 14px;
         background: $main-bg;
-        color: #EAB286;
+        color: $peach;
         border-radius: 6px;
         font-family: monospace;
         padding: 12px 20px;
@@ -68,6 +70,8 @@ p {
     }
 }
 
+/*---------- TUTORIAL PAGE ----------*/
+
 .tutorial-page {
     position: relative;
     width: 100vw;
@@ -76,18 +80,43 @@ p {
     display: flex;
 
     .info {
+        margin: 20px 10px;
         .instructions {
             @include block;
+            @include paragraph;
+            background: $secondary-bg;
+            border-radius: 6px 6px 0px 0px;
         }
         .code-editor {
             @include block;
+            background: $main-bg;
+            border-radius: 0px 0px 6px 6px;
         }
     }
 
     .visual {
-        border-radius: 4px;
-        margin: 20px;
+        border-radius: 6px;
+        margin: 20px 10px;
         width: 100%;
         background: blue;
+    }
+}
+
+.callout {
+    background: $main-bg;
+    border-radius: 4px;
+    display: flex;
+    padding: 10px 12px;
+    margin: 20px 0px;
+
+    p {
+        text-align: left;
+        color: $peach;
+        font-size: 14px;
+        font-family: monospace;
+
+        &:first-of-type {
+            margin-right: 16px;
+        }
     }
 }
