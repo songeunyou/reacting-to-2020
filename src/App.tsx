@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import TutorialPage from './pages/TutorialPage';
 import Completed from './pages/Completed';
 import logo from './logo.svg';
-import './css/App.css';
+import './scss/App.scss';
 
 function App() {
   return (
