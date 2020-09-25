@@ -10,8 +10,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-          <Route exact path="/" component={TutorialPage}/>
-          <Route exact path="/intro" component={HomePage}/>
+          <Route exact path="/tut" component={TutorialPage}/>
+          <Route exact path="/" component={HomePage}/>
           {/*for link www.x.com/tutorial/1 => id '1' will be passed to TutorialPage component*/}
           {/*<Route path="/tutorial/:tutorialStep" render={({ match }) => <TutorialPage id={match.params.tutorialStep}/>}/>*/}
           <Route exact path="/success" component={Completed}/>
