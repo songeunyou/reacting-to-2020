@@ -85,7 +85,10 @@ p {
   display: flex;
 }
 .tutorial-page .info {
+  display: flex;
   margin: 20px 10px;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .tutorial-page .info .instructions {
   color: white;
@@ -102,6 +105,9 @@ p {
   padding: 35px 40px;
   background: #140924;
   border-radius: 0px 0px 6px 6px;
+  height: 100%;
+  flex-grow: 1;
+  text-align: left;
 }
 .tutorial-page .visual {
   border-radius: 6px;
