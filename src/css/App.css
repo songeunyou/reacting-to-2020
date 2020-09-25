@@ -108,6 +108,11 @@ p {
   height: 100%;
   flex-grow: 1;
   text-align: left;
+  padding: 0px;
+  overflow: hidden;
+}
+.tutorial-page .info .code-editor .monaco-editor, .tutorial-page .info .code-editor .monaco-editor-background, .tutorial-page .info .code-editor .monaco-editor .margin, .tutorial-page .info .code-editor .minimap-decorations-layer {
+  background: #140924;
 }
 .tutorial-page .visual {
   border-radius: 6px;

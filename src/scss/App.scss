@@ -98,6 +98,12 @@ p {
             height: 100%;
             flex-grow: 1;
             text-align: left;
+            padding: 0px;
+            overflow: hidden;
+
+            .monaco-editor, .monaco-editor-background, .monaco-editor .margin, .minimap-decorations-layer {
+                background: $main-bg;
+            }
         }
     }
 
