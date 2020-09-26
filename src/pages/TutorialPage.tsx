@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../css/App.css';
 import Callout from '../components/Callout';
 import {allModules} from '../objects/Modules';
+import CodeEditor from '../components/CodeEditor';
 
 interface TutorialProps {
     id: number;
@@ -36,6 +37,7 @@ function TutorialPage({id}: TutorialProps) {
                 }
             </div>
             <div className="code-editor">
+                <CodeEditor />
             </div>
         </div>
         <div className="visual">

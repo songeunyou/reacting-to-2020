@@ -80,7 +80,11 @@ p {
     display: flex;
 
     .info {
+        display: flex;
         margin: 20px 10px;
+        flex-direction: column;
+        flex-grow: 1;
+
         .instructions {
             @include block;
             @include paragraph;
@@ -91,6 +95,9 @@ p {
             @include block;
             background: $main-bg;
             border-radius: 0px 0px 6px 6px;
+            height: 100%;
+            flex-grow: 1;
+            text-align: left;
         }
     }
 
