@@ -19,6 +19,21 @@ const M1Q2: Question = {
     answer: "M1Q2. The answer"
 }
 
+const M1Q3: Question = {
+    id: 3,
+    explanation: "M1Q3. This is another explanation of a React concept.",
+    mission: "M1Q3. This is the third mission that you should accomplish",
+    answer: "M1Q3. The answer"
+}
+
+const M1Q4: Question = {
+    id: 4,
+    explanation: "M1Q4. This is another explanation of a React concept.",
+    mission: "M1Q4. This is the fourth mission that you should accomplish",
+    answer: "M1Q4. The answer"
+}
+
+
 const M2Q1: Question = {
     id: 1,
     explanation: "M2Q1. This is an explanation of a React concept.",
@@ -47,7 +62,7 @@ const M3Q2: Question = {
     answer: "M3Q2. The answer"
 }
 
-export const M1Questions = [M1Q1, M1Q2];
+export const M1Questions = [M1Q1, M1Q2, M1Q3, M1Q4];
 export const M2Questions = [M2Q1, M2Q2];
 export const M3Questions = [M3Q1, M3Q2];
 
