@@ -1,6 +1,7 @@
 import React from 'react';
 import Callout from '../components/Callout';
 import CodeEditor from '../components/CodeEditor';
+import CodePreview from '../components/CodePreview';
 
 interface TutorialProps {
     id: string;
@@ -22,6 +23,7 @@ function TutorialPage({id}: TutorialProps) {
             </div>
         </div>
         <div className="visual">
+            <CodePreview code={"<strong>Hello World!</strong>"} />
         </div>
     </div>
   );

@@ -1,32 +1,31 @@
-import React, {useState} from 'react';
-import MonacoEditor from 'react-monaco-editor';
+import React, { useState } from "react";
+import MonacoEditor from "react-monaco-editor";
+import CodePreview from "./CodePreview";
 
-interface CodeEditorProps {
-
-}
+interface CodeEditorProps {}
 
 function CodeEditor({}: CodeEditorProps) {
-    const [code, setCode] = useState<string>("");
-    const [editor, setEditor] = useState<any>(null);
+  const [code, setCode] = useState<string>("");
+  const [editor, setEditor] = useState<any>(null);
 
-    function editorDidMount(editor: any, monaco: any) {
-        setEditor(editor);
-    }
+  function editorDidMount(editor: any, monaco: any) {
+    setEditor(editor);
+  }
 
-    const options = {
+  const options = {};
 
-    }
-    
-    return (
-        <MonacoEditor
-            language="javascript"
-            theme="vs-dark"
-            value={code}
-            options={options}
-            onChange={(newValue, e)=>setCode(newValue)}
-            editorDidMount={editorDidMount}
-        />
-    );
+  return (
+    <><MonacoEditor
+      language="javascript"
+      theme="vs-dark"
+      value={code}
+      options={options}
+      onChange={(newValue, e) => {
+        setCode(newValue);
+      } }
+      editorDidMount={editorDidMount} />
+      <CodePreview code={code} /></>
+  );
 }
 
 export default CodeEditor;
