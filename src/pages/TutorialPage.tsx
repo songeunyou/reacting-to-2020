@@ -4,6 +4,7 @@ import '../css/App.css';
 import Callout from '../components/Callout';
 import {allModules} from '../objects/Modules';
 import CodeEditor from '../components/CodeEditor';
+import AuForestFire from '../components/AuForestFire';
 
 
 interface TutorialProps {
@@ -52,6 +53,11 @@ function TutorialPage({id}: TutorialProps) {
             </div>
         </div>
         <div className="visual">
+          {
+            id == 1 ?
+            <AuForestFire id={question+1} />
+            : null
+          }
         </div>
     </div>
   );

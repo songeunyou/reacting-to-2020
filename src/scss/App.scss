@@ -185,13 +185,9 @@ p {
 
 .fire {
   position: absolute;
-  // top: calc(50% - 50px);
-  // left: calc(50% - 50px);
   width: 70px;
   height: 70px;
   background-color: transparent;
-  // margin-left: auto;
-  // margin-right: auto;
 }
 
 .fire-main {
@@ -310,4 +306,20 @@ p {
   animation: glow 2s ease-out 0;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
+}
+
+
+/*---------- BOAT ----------*/
+@keyframes boatmove {
+  0% {transform:rotate(1deg) translate(0px,0px) scale(0.15)}
+  25% {transform:rotate(-1deg) translate(0px,-15px) scale(0.15) }
+  50% {transform:rotate(1deg) translate(0px, 0px) scale(0.15) }
+  75% {transform:rotate(-1deg) translate(0px,-10px) scale(0.15)}
+  100%{transform:rotate(1deg) translate(0px,0px) scale(0.15)}
+}
+
+.boat {
+  transform: scale(0.15);
+  animation: boatmove 4s infinite;
+  animation-delay:0.25s;
 }

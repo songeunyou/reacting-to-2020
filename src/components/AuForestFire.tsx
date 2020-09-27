@@ -7,6 +7,7 @@ interface AuForestFireProps {
     id: number
 }
 
+  
 function AuForestFire({id}: AuForestFireProps) {
     switch(id) {
         case 1:
@@ -40,7 +41,7 @@ function AuForestFire({id}: AuForestFireProps) {
             return (
                 <div>
                     <Australia style={{position: "relative", transform: "scale(0.6)", bottom: "30px"}}/>
-                    <Sailboat style={{position: "absolute", top: "200px", marginLeft: "-800px", transform: "scale(0.15)"}}/>
+                    <Sailboat className="boat" style={{position: "absolute", top: "200px", marginLeft: "-800px"}}/>
                     <Fire style={{top: "380px", marginLeft: "500px"}}/>
                     <Fire style={{top: "280px", marginLeft: "500px"}}/>
                     <Fire style={{top: "230px", marginLeft: "380px"}}/>
