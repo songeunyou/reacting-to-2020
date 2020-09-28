@@ -19,7 +19,6 @@ function TutorialPage({id}: TutorialProps) {
     setQuestion(0);
   }, [id]);
 
-
   return (
     <div className="tutorial-page">
         <div className="info">
