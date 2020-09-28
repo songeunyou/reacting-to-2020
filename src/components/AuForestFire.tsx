@@ -8,13 +8,13 @@ interface AuForestFireProps {
     id: number
 }
 
-  
+
 function AuForestFire({id}: AuForestFireProps) {
     switch(id) {
         case 1:
             return (
                 <div>
-                    <h1 className="appear">Welcome to Wollemi National Park</h1>
+                    <h1 className="wollemi-welcome appear">Welcome to Wollemi National Park</h1>
                     <Park className="park" style={{position: "relative", bottom: "40px"}}/>
                 </div>
             )

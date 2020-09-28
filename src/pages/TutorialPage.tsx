@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/App.css';
-import Callout from '../components/Callout';
+import '../css/Australia.css';
 import {allModules} from '../objects/Modules';
 import CodeEditor from '../components/CodeEditor';
 import AuForestFire from '../components/AuForestFire';
@@ -23,26 +23,25 @@ function TutorialPage({id}: TutorialProps) {
 
 
   return (
-    <div className="tutorial-page">
+    <div className={`tutorial-page module-${id}`}>
         <div className="info">
-            <div className="instructions">
+            <div className={`instructions inst-module-${id}`}>
                 {
-                  module.questions[question] !== undefined
-                  ? module.questions[question].explanation
-                  : null
+                    module.questions[question] !== undefined
+                    ? <p>{module.questions[question].explanation}</p>
+                    : null
                 }
-                <Callout emoji="💩" text="This is a callout, for little texts you might wanna add about things!"/>
                 {
-                question < module.questions.length-1 
-                ? <button onClick={() => setQuestion(question + 1)}>Next</button> 
+                question < module.questions.length-1
+                ? <button onClick={() => setQuestion(question + 1)}>Next</button>
                 // reached the end of all modules
-                : id == 3 
-                  ? <div className="start-btn">
-                        <Link to={`/success}`}>
+                : id == 3
+                  ? <div className="next-btn">
+                        <Link to={`/success`}>
                             <p>Finish</p>
                         </Link>
                     </div>
-                  : <div className="start-btn">
+                  : <div className="next-btn">
                       <Link to={`/tutorial/${nextModuleIndex}`} key={nextModuleIndex}>
                           <p>Next Module</p>
                       </Link>
