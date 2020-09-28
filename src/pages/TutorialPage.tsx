@@ -5,6 +5,7 @@ import '../css/Australia.css';
 import {allModules} from '../objects/Modules';
 import CodeEditor from '../components/CodeEditor';
 import AuForestFire from '../components/AuForestFire';
+import BLMVisual from '../components/BLMVisual';
 
 
 interface TutorialProps {
@@ -55,6 +56,8 @@ function TutorialPage({id}: TutorialProps) {
           {
             id == 1 ?
             <AuForestFire id={question+1} />
+            : id == 3 ?
+            <BLMVisual id={question+1} />
             : null
           }
         </div>

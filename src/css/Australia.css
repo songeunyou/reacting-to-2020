@@ -29,6 +29,20 @@
 }
 
 /*---------- FIRE ----------*/
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.appear {
+  animation: grow;
+  animation-duration: 0.5s;
+}
+
 @keyframes scaleUpDown {
   0%, 100% {
     transform: scaleY(1) scaleX(1);
@@ -218,10 +232,34 @@
     transform: rotate(1deg) translate(0px, 0px) scale(0.15);
   }
 }
-.boat {
-  transform: scale(0.15);
-  animation: boatmove 4s infinite;
-  animation-delay: 0.25s;
+
+@keyframes boatgrow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.15);
+  }
 }
 
+.boat {
+  transform: scale(0.15);
+  animation: boatgrow 0.5s, boatmove 4s infinite;
+  animation-delay: 0s, 0.5s;
+}
 /*# sourceMappingURL=Australia.css.map */
+
+/*---------- SIGN ----------*/
+@keyframes parkmove {
+  0% {transform: translate(0px,0px) scale(0.6)}
+  25% {transform: translate(0px,-20px) scale(0.6) }
+  50% {transform: translate(0px, 0px) scale(0.6) }
+  75% {transform: translate(0px,-20px) scale(0.6)}
+  100%{transform: translate(0px,0px) scale(0.6)}
+}
+
+.park {
+  transform: scale(0.6);
+  animation: parkmove 3s infinite;
+  animation-delay:0.25s;
+}

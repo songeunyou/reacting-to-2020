@@ -120,6 +120,14 @@ const M3Q2: Question = {
     answer: "M3Q2. The answer"
 }
 
+const M3Q3: Question = {
+    id: 3,
+    explanation: <div/>,
+    mission: "M3Q3. This is the third mission that you should accomplish",
+    answer: "M3Q3. The answer"
+}
+
 export const M1Questions = [M1Q1, M1Q2, M1Q3, M1Q4];
 export const M2Questions = [M2Q1, M2Q2];
-export const M3Questions = [M3Q1, M3Q2];
+export const M3Questions = [M3Q1, M3Q2, M3Q3];
+
