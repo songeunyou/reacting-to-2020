@@ -16,6 +16,7 @@ function TutorialPage({id}: TutorialProps) {
   const module = allModules[id-1];
   const nextModuleIndex = Number(id) + 1;
   const [question, setQuestion] = useState(0);
+  const [description, setDescriptionVisibility] = useState(true);
 
   useEffect(() => {
     setQuestion(0);
@@ -26,14 +27,33 @@ function TutorialPage({id}: TutorialProps) {
     <div className={`tutorial-page module-${id}`}>
         <div className="info">
             <div className={`instructions inst-module-${id}`}>
-                {
-                    module.questions[question] !== undefined
-                    ? <p>{module.questions[question].explanation}</p>
-                    : null
-                }
-                {
-                question < module.questions.length-1
-                ? <button onClick={() => setQuestion(question + 1)}>Next</button>
+                <button className="desc-btn" onClick={() => setDescriptionVisibility(!description)}>{description ? "Hide Description" : "Show Description"}</button>
+                <div className={`desc-container ${description ? "" : "hide-desc"}`}>
+                    {
+                        module.questions[question] !== undefined
+                        ? <p>{module.questions[question].explanation}</p>
+                        : null
+                    }
+                </div>
+
+                <div className="mission">
+                    <h2>Mission</h2>
+                    {
+                        module.questions[question] !== undefined
+                        ? <p>{module.questions[question].mission}</p>
+                        : null
+                    }
+                </div>
+            </div>
+            <div className="code-editor">
+                <CodeEditor />
+            </div>
+            {
+                question < module.questions.length-1 ?
+                <button onClick={() => {
+                    setQuestion(question + 1);
+                    setDescriptionVisibility(true);}
+                }>Next</button>
                 // reached the end of all modules
                 : id == 3
                   ? <div className="next-btn">
@@ -46,11 +66,7 @@ function TutorialPage({id}: TutorialProps) {
                           <p>Next Module</p>
                       </Link>
                     </div>
-                }
-            </div>
-            <div className="code-editor">
-                <CodeEditor />
-            </div>
+            }
         </div>
         <div className="visual">
           {
