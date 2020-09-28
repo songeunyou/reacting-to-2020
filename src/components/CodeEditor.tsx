@@ -9,7 +9,10 @@ import {
 
 import "./CodeEditor.scss";
 
-interface CodeEditorProps {}
+interface CodeEditorProps {
+  question: number,
+  answer: string
+}
 
 function CodeEditor(props: CodeEditorProps) {
   const [code, setCode] = useState<string>(
@@ -27,11 +30,11 @@ render(
   );
   const [result, setResult] = useState<boolean>(false);
   const container = useRef<HTMLDivElement>(null);
-  console.log(container.current?.children[0].innerHTML)
- 
-  console.log(container.current?.innerHTML);
+  const editor = useRef<HTMLDivElement>(null);
 
-  console.log(props);
+  console.log(props)
+  console.log(editor)
+
   const handleSubmit = (event: { preventDefault: () => void }) => {
     setResult(
       container.current?.children[0].innerHTML.includes("<h3>WE DID IT</h3>") ||
@@ -44,9 +47,9 @@ render(
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <LiveProvider noInline={true} code={code}>
-          <div className="editor">
+      <form onSubmit={handleSubmit}>  
+        <LiveProvider transformCode={(code) => {setCode(code); return code}} noInline={true} code={code}>
+          <div className="editor" ref={editor}>
             <LiveEditor />
           </div>
           <div className="error">

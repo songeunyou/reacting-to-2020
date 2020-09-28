@@ -47,7 +47,7 @@ function TutorialPage({id}: TutorialProps) {
                 }
             </div>
             <div className="code-editor">
-                <CodeEditor />
+                <CodeEditor question={question} answer={module.questions[question].answer}/>
             </div>
         </div>
         <div className="visual">
