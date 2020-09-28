@@ -177,5 +177,5 @@ const M3Q3: Question = {
 }
 
 export const M1Questions = [M1Q1, M1Q2, M1Q3, M1Q4];
-export const M2Questions = [M2Q1, M2Q2];
+export const M2Questions = [M2Q1, M2Q2, M2Q3];
 export const M3Questions = [M3Q1, M3Q2, M3Q3];

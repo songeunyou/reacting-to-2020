@@ -69,6 +69,9 @@ p {
   padding: 12px 20px;
   box-shadow: 0px 4px 10px -4px rgba(20, 9, 36, 0.8);
 }
+.home-page a, .completed-page a {
+  text-decoration: none;
+}
 .home-page .start-btn, .completed-page .start-btn {
   display: flex;
   align-items: center;
@@ -78,7 +81,14 @@ p {
   border-radius: 50%;
   width: 80px;
   height: 80px;
-  margin-top: 40px;
+  margin: 30px 0px;
+  transition: 0.2s;
+}
+.home-page .start-btn:hover, .completed-page .start-btn:hover {
+  background: #EAB286;
+  margin: 20px 0px;
+  width: 100px;
+  height: 100px;
 }
 .home-page .credits, .completed-page .credits {
   position: fixed;
@@ -157,12 +167,12 @@ p {
   right: 10px;
   font-size: 12px;
   padding: 4px 10px;
-  background: rgba(20, 9, 36, 0.6);
+  background: rgba(20, 9, 36, 0.1);
   box-shadow: none;
   border-radius: 4px;
 }
 .tutorial-page .info .instructions .desc-btn:hover {
-  background: #140924;
+  background: rgba(20, 9, 36, 0.2);
   transform: none;
 }
 .tutorial-page .info .instructions .desc-container {
