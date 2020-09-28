@@ -4,8 +4,8 @@
 
 .App {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
     text-align: center;
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@ p {
 
     .subtitle {
         font-size: 14px;
-        background: $main-bg;
+        background: $primary-bg;
         color: $peach;
         border-radius: 6px;
         font-family: monospace;
@@ -90,10 +90,34 @@ p {
             @include paragraph;
             background: $secondary-bg;
             border-radius: 6px 6px 0px 0px;
+
+            .explanation {
+                h2 {
+                    @include title;
+                    margin: 0px;
+                    margin-bottom: 12px;
+                }
+
+                p {
+                    text-align: left;
+                }
+
+                span {
+                    margin: 16px 0px;
+                    background: $primary-bg !important;
+                    text-align: left;
+
+                    code {
+                        font-size: 14px !important;
+                        padding: 8px 14px !important;
+                    }
+                }
+            }
         }
+
         .code-editor {
             @include block;
-            background: $main-bg;
+            background: $primary-bg;
             border-radius: 0px 0px 6px 6px;
             height: 100%;
             flex-grow: 1;
@@ -110,7 +134,7 @@ p {
 }
 
 .callout {
-    background: $main-bg;
+    background: $primary-bg;
     border-radius: 4px;
     display: flex;
     padding: 10px 12px;
@@ -126,200 +150,4 @@ p {
             margin-right: 16px;
         }
     }
-}
-
-/*---------- FIRE ----------*/
-@keyframes scaleUpDown {
-  0%,
-  100% {
-    transform: scaleY(1) scaleX(1);
-  }
-  50%,
-  90% {
-    transform: scaleY(1.1);
-  }
-  75% {
-    transform: scaleY(0.95);
-  }
-  80% {
-    transform: scaleX(0.95);
-  }
-}
-  
-@keyframes shake {
-  0%,
-  100% {
-    transform: skewX(0) scale(1);
-  }
-  50% {
-    transform: skewX(5deg) scale(0.9);
-  }
-}
-
-@keyframes particleUp {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    top: -100%;
-    transform: scale(0.5);
-  }
-}
-
-@keyframes glow {
-  0%,
-  100% {
-    background-color: #ef5a00;
-  }
-  50% {
-    background-color: #ff7800;
-  }
-}
-
-.fire {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background-color: transparent;
-}
-
-.fire-main {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  animation: scaleUpDown 3s ease-out;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-main .main-fire {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(farthest-corner at 10px 0, #d43300 0%, #ef5a00 95%);
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 60% 40%;
-  filter: drop-shadow(0 0 10px #d43322);
-}
-
-.fire-main .particle-fire {
-  position: absolute;
-  top: 60%;
-  left: 45%;
-  width: 10px;
-  height: 10px;
-  background-color: #ef5a00;
-  border-radius: 50%;
-  filter: drop-shadow(0 0 10px #d43322);
-  animation: particleUp 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-right {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  animation: shake 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-right .main-fire {
-  position: absolute;
-  top: 15%;
-  right: -25%;
-  width: 80%;
-  height: 80%;
-  background-color: #ef5a00;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 60% 40%;
-  filter: drop-shadow(0 0 10px #d43322);
-}
-
-.fire-right .particle-fire {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  width: 15px;
-  height: 15px;
-  background-color: #ef5a00;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 50%;
-  filter: drop-shadow(0 0 10px #d43322);
-  animation: particleUp 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-left {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  animation: shake 3s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-left .main-fire {
-  position: absolute;
-  top: 15%;
-  left: -20%;
-  width: 80%;
-  height: 80%;
-  background-color: #ef5a00;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 60% 40%;
-  filter: drop-shadow(0 0 10px #d43322);
-}
-
-.fire-left .particle-fire {
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  width: 10%;
-  height: 10%;
-  background-color: #ef5a00;
-  border-radius: 50%;
-  filter: drop-shadow(0 0 10px #d43322);
-  animation: particleUp 3s infinite ease-out 0;
-  animation-fill-mode: both;
-}
-
-.fire-bottom .main-fire {
-  position: absolute;
-  top: 30%;
-  left: 20%;
-  width: 75%;
-  height: 75%;
-  background-color: #ff7800;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 100% 40%;
-  filter: blur(10px);
-  animation: glow 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-
-/*---------- BOAT ----------*/
-@keyframes boatmove {
-  0% {transform:rotate(1deg) translate(0px,0px) scale(0.15)}
-  25% {transform:rotate(-1deg) translate(0px,-15px) scale(0.15) }
-  50% {transform:rotate(1deg) translate(0px, 0px) scale(0.15) }
-  75% {transform:rotate(-1deg) translate(0px,-10px) scale(0.15)}
-  100%{transform:rotate(1deg) translate(0px,0px) scale(0.15)}
-}
-
-.boat {
-  transform: scale(0.15);
-  animation: boatmove 4s infinite;
-  animation-delay:0.25s;
 }
