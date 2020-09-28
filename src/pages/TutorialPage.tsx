@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../css/App.css';
 import Callout from '../components/Callout';
 import {allModules} from '../objects/Modules';
 import CodeEditor from '../components/CodeEditor';

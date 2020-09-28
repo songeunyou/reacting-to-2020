@@ -1,0 +1,23 @@
+.code-editor {
+    box-sizing: border-box!important;
+    width: 100%!important;
+    
+    .editor, .editor div:first-child {
+        background: rgb(50, 42, 56);
+        overflow: auto;
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .error {
+        white-space: pre-wrap;
+        word-break: keep-all;
+        overflow-wrap: break-word;  
+    }
+
+    .display {
+        display: none;
+    }
+}

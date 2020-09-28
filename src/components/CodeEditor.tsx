@@ -1,37 +1,45 @@
-import React, { useState } from "react";
-import MonacoEditor from "react-monaco-editor";
-import CodePreview from "./CodePreview";
+import React, { useRef, useState } from "react";
+import { LiveEditor, LiveError, LivePreview, LiveProvider, withLive } from "react-live";
 
-interface CodeEditorProps {}
+import './CodeEditor.scss';
 
-function CodeEditor({}: CodeEditorProps) {
-  const [code, setCode] = useState<string>(`function component () {
+interface CodeEditorProps {
+}
+
+function CodeEditor(props: CodeEditorProps) {
+  const [code, setCode] = useState<string>(
+`function Component () {
   return (
     <h3>
       So functional. Much wow!
     </h3>
   )
-}`);
-  const [editor, setEditor] = useState<any>(null);
+}
 
-  function editorDidMount(editor: any, monaco: any) {
-    setEditor(editor);
-  }
+render(
+  <Component />
+)`
+);
 
-  const options = {};
+  const container = useRef<HTMLDivElement>(null);
+  console.log(container.current?.children[0].innerHTML === "<div><h3>WE DID IT</h3></div>");
+  console.log(container.current?.innerHTML)
+
+  console.log(props);
 
   return (
-    <><MonacoEditor
-      language="javascript"
-      theme="vs-dark"
-      value={code}
-      options={options}
-      onChange={(newValue, e) => {
-        setCode(newValue);
-      } }
-      editorDidMount={editorDidMount} />
-      <CodePreview code={code}/></>
+    <LiveProvider noInline={true} code={code}>
+      <div className="editor">
+          <LiveEditor />
+      </div>
+      <div className="error">
+        <LiveError />
+      </div>
+      <div className="display" ref={container}>
+        <LivePreview />
+      </div>
+    </LiveProvider>
   );
 }
 
-export default CodeEditor;
+export default withLive(CodeEditor);
