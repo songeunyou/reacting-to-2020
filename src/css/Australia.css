@@ -1,3 +1,33 @@
+@font-face {
+  font-family: Obviously;
+  src: url("../fonts/Obviously-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: ObviouslyWide;
+  src: url("../fonts/Obviously-Wide.otf") format("opentype");
+}
+@font-face {
+  font-family: Obviously;
+  src: url("../fonts/Obviously-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: ObviouslyWide;
+  src: url("../fonts/Obviously-Wide.otf") format("opentype");
+}
+.wollemi-welcome {
+  font-size: 14px;
+  background: #140924;
+  border-radius: 6px;
+  font-family: monospace;
+  padding: 12px 20px;
+  box-shadow: 0px 4px 10px -4px rgba(20, 9, 36, 0.8);
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 16px;
+  color: white;
+  font-family: monospace;
+}
+
 /*---------- FIRE ----------*/
 @keyframes scaleUpDown {
   0%, 100% {

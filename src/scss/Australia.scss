@@ -1,3 +1,16 @@
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+
+.wollemi-welcome {
+    @include shadow-block;
+    display: inline-block;
+    margin-top: 40px;
+    font-size: 16px;
+    color: white;
+    font-family: monospace;
+}
+
 /*---------- FIRE ----------*/
 @keyframes scaleUpDown {
   0%,

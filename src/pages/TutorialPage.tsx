@@ -22,9 +22,9 @@ function TutorialPage({id}: TutorialProps) {
 
 
   return (
-    <div className="tutorial-page">
+    <div className={`tutorial-page module-${id}`}>
         <div className="info">
-            <div className="instructions">
+            <div className={`instructions inst-module-${id}`}>
                 {
                     module.questions[question] !== undefined
                     ? <p>{module.questions[question].explanation}</p>
@@ -35,12 +35,12 @@ function TutorialPage({id}: TutorialProps) {
                 ? <button onClick={() => setQuestion(question + 1)}>Next</button>
                 // reached the end of all modules
                 : id == 3
-                  ? <div className="start-btn">
-                        <Link to={`/success}`}>
+                  ? <div className="next-btn">
+                        <Link to={`/success`}>
                             <p>Finish</p>
                         </Link>
                     </div>
-                  : <div className="start-btn">
+                  : <div className="next-btn">
                       <Link to={`/tutorial/${nextModuleIndex}`} key={nextModuleIndex}>
                           <p>Next Module</p>
                       </Link>
