@@ -4,12 +4,8 @@ import '../css/App.css';
 import Callout from '../components/Callout';
 import {allModules} from '../objects/Modules';
 import CodeEditor from '../components/CodeEditor';
-<<<<<<< HEAD
-import CodePreview from '../components/CodePreview';
-=======
 import AuForestFire from '../components/AuForestFire';
 
->>>>>>> e1a92b5b4670784c011632c9f7ee4d1aff39c0dd
 
 interface TutorialProps {
     id: number;
@@ -57,15 +53,11 @@ function TutorialPage({id}: TutorialProps) {
             </div>
         </div>
         <div className="visual">
-<<<<<<< HEAD
-            <CodePreview code={"<strong>Hello World!</strong>"} />
-=======
           {
             id == 1 ?
             <AuForestFire id={question+1} />
             : null
           }
->>>>>>> e1a92b5b4670784c011632c9f7ee4d1aff39c0dd
         </div>
     </div>
   );

@@ -5,7 +5,13 @@ import CodePreview from "./CodePreview";
 interface CodeEditorProps {}
 
 function CodeEditor({}: CodeEditorProps) {
-  const [code, setCode] = useState<string>("");
+  const [code, setCode] = useState<string>(`function component () {
+  return (
+    <h3>
+      So functional. Much wow!
+    </h3>
+  )
+}`);
   const [editor, setEditor] = useState<any>(null);
 
   function editorDidMount(editor: any, monaco: any) {
@@ -24,7 +30,7 @@ function CodeEditor({}: CodeEditorProps) {
         setCode(newValue);
       } }
       editorDidMount={editorDidMount} />
-      <CodePreview code={code} /></>
+      <CodePreview code={code}/></>
   );
 }
 
