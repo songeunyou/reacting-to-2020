@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/App.css';
-import Callout from '../components/Callout';
+import '../css/Australia.css';
 import {allModules} from '../objects/Modules';
 import CodeEditor from '../components/CodeEditor';
+import AuForestFire from '../components/AuForestFire';
+
 
 interface TutorialProps {
     id: number;
@@ -18,26 +20,30 @@ function TutorialPage({id}: TutorialProps) {
     setQuestion(0);
   }, [id]);
 
+
   return (
     <div className="tutorial-page">
         <div className="info">
             <div className="instructions">
-                {module.questions[question].explanation}
-                {/* FILLER INSTRUCTIONS: My all-time favorite oven baked chicken breasts recipe!  It never fails me, thanks to this simple 5-step method that is easy to make and customize with your favorite seasonings. */}
-                <Callout emoji="💩" text="This is a callout, for little texts you might wanna add about things!"/>
                 {
-                question < module.questions.length-1 
-                ? <button onClick={() => setQuestion(question + 1)}>Next</button> 
-                : id == 3 
+                    module.questions[question] !== undefined
+                    ? <p>{module.questions[question].explanation}</p>
+                    : null
+                }
+                {
+                question < module.questions.length-1
+                ? <button onClick={() => setQuestion(question + 1)}>Next</button>
+                // reached the end of all modules
+                : id == 3
                   ? <div className="start-btn">
                         <Link to={`/success}`}>
                             <p>Finish</p>
                         </Link>
                     </div>
                   : <div className="start-btn">
-                        <Link to={`/tutorial/${nextModuleIndex}`} key={nextModuleIndex}>
-                            <p>Next Module</p>
-                        </Link>
+                      <Link to={`/tutorial/${nextModuleIndex}`} key={nextModuleIndex}>
+                          <p>Next Module</p>
+                      </Link>
                     </div>
                 }
             </div>
@@ -46,6 +52,11 @@ function TutorialPage({id}: TutorialProps) {
             </div>
         </div>
         <div className="visual">
+          {
+            id == 1 ?
+            <AuForestFire id={question+1} />
+            : null
+          }
         </div>
     </div>
   );

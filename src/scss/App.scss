@@ -4,7 +4,8 @@
 
 .App {
     position: relative;
-    width: 100vw;
+    min-width: 100vw;
+    min-height: 100vh;
     height: 100vh;
     text-align: center;
     display: flex;
@@ -38,7 +39,7 @@ p {
 
     .subtitle {
         font-size: 14px;
-        background: $main-bg;
+        background: $primary-bg;
         color: $peach;
         border-radius: 6px;
         font-family: monospace;
@@ -90,10 +91,34 @@ p {
             @include paragraph;
             background: $secondary-bg;
             border-radius: 6px 6px 0px 0px;
+
+            .explanation {
+                h2 {
+                    @include title;
+                    margin: 0px;
+                    margin-bottom: 12px;
+                }
+
+                p {
+                    text-align: left;
+                }
+
+                span {
+                    margin: 16px 0px;
+                    background: $primary-bg !important;
+                    text-align: left;
+
+                    code {
+                        font-size: 14px !important;
+                        padding: 8px 14px !important;
+                    }
+                }
+            }
         }
+
         .code-editor {
             @include block;
-            background: $main-bg;
+            background: $primary-bg;
             border-radius: 0px 0px 6px 6px;
             height: 100%;
             flex-grow: 1;
@@ -116,7 +141,7 @@ p {
 }
 
 .callout {
-    background: $main-bg;
+    background: $primary-bg;
     border-radius: 4px;
     display: flex;
     padding: 10px 12px;
