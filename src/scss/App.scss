@@ -19,10 +19,26 @@ p {
 
 /*---------- HOMEPAGE ----------*/
 
-.home-page {
+.home-page, .completed-page {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: fade 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    margin-top: 60px;
+
+    @keyframes fade {
+        0%   {
+            opacity: 0;
+            margin-top: 60px;
+        }
+        100% {
+            opacity: 1;
+            margin-top: 0px;
+        }
+    }
 
     .emojis {
         font-size: 50px;
@@ -38,7 +54,7 @@ p {
 
     .subtitle {
         font-size: 14px;
-        background: $main-bg;
+        background: $primary-bg;
         color: $peach;
         border-radius: 6px;
         font-family: monospace;
@@ -72,12 +88,26 @@ p {
 
 /*---------- TUTORIAL PAGE ----------*/
 
+.module-1 {
+    background: #96ced4;
+}
+
+.module-2 {
+    background: #d9c293;
+}
+
+.module-3 {
+    background: #e0b09d;
+}
+
 .tutorial-page {
     position: relative;
     width: 100vw;
-    height: 80%;
+    height: 100vh;
+    top: 0px;
     padding: 60px;
     display: flex;
+    transition: 1s;
 
     .info {
         display: flex;
@@ -85,19 +115,84 @@ p {
         flex-direction: column;
         flex-grow: 1;
 
+        .inst-module-1 {
+            background: #429ea8;
+        }
+
+        .inst-module-2 {
+            background: #967635;
+        }
+
+        .inst-module-3 {
+            background: #9c654f;
+        }
+
         .instructions {
             @include block;
             @include paragraph;
-            background: $secondary-bg;
             border-radius: 6px 6px 0px 0px;
+            transition: 1s;
+
+            .explanation {
+                h2 {
+                    @include title;
+                    margin: 0px;
+                    margin-bottom: 12px;
+                }
+
+                p {
+                    text-align: left;
+                }
+
+                span {
+                    margin: 16px 0px;
+                    background: $primary-bg !important;
+                    text-align: left;
+
+                    code {
+                        font-size: 14px !important;
+                        padding: 8px 14px !important;
+                    }
+                }
+            }
         }
+
+        .next-btn, button {
+            @include shadow-block;
+            cursor: pointer;
+            background: $primary-bg;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            transition: 0.1s;
+
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+
+        .next-btn {
+            margin-top: 20px;
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+
         .code-editor {
             @include block;
-            background: $main-bg;
+            background: $primary-bg;
             border-radius: 0px 0px 6px 6px;
             height: 100%;
             flex-grow: 1;
             text-align: left;
+            padding: 0px;
+            overflow: hidden;
+
+            .monaco-editor, .monaco-editor-background, .monaco-editor .margin, .minimap-decorations-layer {
+                background: $primary-bg;
+            }
         }
     }
 
@@ -105,12 +200,13 @@ p {
         border-radius: 6px;
         margin: 20px 10px;
         width: 100%;
-        background: blue;
+        background-color: #198ed1;
+        background-image: linear-gradient(20deg, #198ed1 0%, #67bfb5 100%);
     }
 }
 
 .callout {
-    background: $main-bg;
+    background: $primary-bg;
     border-radius: 4px;
     display: flex;
     padding: 10px 12px;
@@ -128,198 +224,87 @@ p {
     }
 }
 
-/*---------- FIRE ----------*/
-@keyframes scaleUpDown {
-  0%,
-  100% {
-    transform: scaleY(1) scaleX(1);
-  }
-  50%,
-  90% {
-    transform: scaleY(1.1);
-  }
-  75% {
-    transform: scaleY(0.95);
-  }
-  80% {
-    transform: scaleX(0.95);
-  }
-}
-  
-@keyframes shake {
-  0%,
-  100% {
-    transform: skewX(0) scale(1);
-  }
-  50% {
-    transform: skewX(5deg) scale(0.9);
-  }
-}
-
-@keyframes particleUp {
+@keyframes grow {
   0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
+    transform: scale(0);
   }
   100% {
-    opacity: 0;
-    top: -100%;
-    transform: scale(0.5);
+    transform: scale(1);
   }
 }
 
-@keyframes glow {
-  0%,
-  100% {
-    background-color: #ef5a00;
-  }
-  50% {
-    background-color: #ff7800;
-  }
-}
-
-.fire {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background-color: transparent;
-}
-
-.fire-main {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  animation: scaleUpDown 3s ease-out;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-main .main-fire {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(farthest-corner at 10px 0, #d43300 0%, #ef5a00 95%);
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 60% 40%;
-  filter: drop-shadow(0 0 10px #d43322);
-}
-
-.fire-main .particle-fire {
-  position: absolute;
-  top: 60%;
-  left: 45%;
-  width: 10px;
-  height: 10px;
-  background-color: #ef5a00;
-  border-radius: 50%;
-  filter: drop-shadow(0 0 10px #d43322);
-  animation: particleUp 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-right {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  animation: shake 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-right .main-fire {
-  position: absolute;
-  top: 15%;
-  right: -25%;
-  width: 80%;
-  height: 80%;
-  background-color: #ef5a00;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 60% 40%;
-  filter: drop-shadow(0 0 10px #d43322);
-}
-
-.fire-right .particle-fire {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  width: 15px;
-  height: 15px;
-  background-color: #ef5a00;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 50%;
-  filter: drop-shadow(0 0 10px #d43322);
-  animation: particleUp 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-left {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  animation: shake 3s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-left .main-fire {
-  position: absolute;
-  top: 15%;
-  left: -20%;
-  width: 80%;
-  height: 80%;
-  background-color: #ef5a00;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 60% 40%;
-  filter: drop-shadow(0 0 10px #d43322);
-}
-
-.fire-left .particle-fire {
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  width: 10%;
-  height: 10%;
-  background-color: #ef5a00;
-  border-radius: 50%;
-  filter: drop-shadow(0 0 10px #d43322);
-  animation: particleUp 3s infinite ease-out 0;
-  animation-fill-mode: both;
-}
-
-.fire-bottom .main-fire {
-  position: absolute;
-  top: 30%;
-  left: 20%;
-  width: 75%;
-  height: 75%;
-  background-color: #ff7800;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 100% 40%;
-  filter: blur(10px);
-  animation: glow 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
+.appear {
+  animation: grow;
+  animation-duration: 0.5s;
 }
 
 
-/*---------- BOAT ----------*/
-@keyframes boatmove {
-  0% {transform:rotate(1deg) translate(0px,0px) scale(0.15)}
-  25% {transform:rotate(-1deg) translate(0px,-15px) scale(0.15) }
-  50% {transform:rotate(1deg) translate(0px, 0px) scale(0.15) }
-  75% {transform:rotate(-1deg) translate(0px,-10px) scale(0.15)}
-  100%{transform:rotate(1deg) translate(0px,0px) scale(0.15)}
+/*---------- PROTESTER ----------*/
+@keyframes protestermove {
+  0% {transform: translate(0px,0px) scale(0.75)}
+  25% {transform: translate(0px,-20px) scale(0.75) }
+  50% {transform: translate(0px, 0px) scale(0.75) }
+  75% {transform: translate(0px,-20px) scale(0.75)}
+  100%{transform: translate(0px,0px) scale(0.75)}
 }
 
-.boat {
-  transform: scale(0.15);
-  animation: boatmove 4s infinite;
+.protester {
+  transform: scale(0.75);
+  animation: protestermove 4s infinite;
   animation-delay:0.25s;
+}
+
+/*---------- NOISE ----------*/
+@keyframes noisegrow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.15);
+  }
+}
+
+@keyframes noisemove {
+  0% {transform:rotate(-10deg) translate(0px,0px) scale(0.15)}
+  25% {transform:rotate(10deg) translate(0px,-10px) scale(0.15) }
+  50% {transform:rotate(-10deg) translate(0px, 0px) scale(0.15) }
+  75% {transform:rotate(10deg) translate(0px,-10px) scale(0.15)}
+  100%{transform:rotate(-10deg) translate(0px,0px) scale(0.15)}
+}
+
+.noise {
+  transform: scale(0.15);
+  animation: noisegrow 0.5s, noisemove 1s infinite;
+  animation-delay:0s, 0.5s;
+}
+
+/*---------- FIST ----------*/
+@keyframes fistgrow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.1);
+  }
+}
+
+@keyframes fistmove {
+  0% {transform: translate(0px,0px) scale(0.1)}
+  25% {transform: translate(0px,-10px) scale(0.1) }
+  50% {transform: translate(0px, 0px) scale(0.1) }
+  75% {transform: translate(0px,-10px) scale(0.1)}
+  100%{transform: translate(0px,0px) scale(0.1)}
+}
+
+.fist {
+  transform: scale(0.1);
+  animation: fistgrow 0.5s, fistmove 2s infinite;
+  animation-delay: 0s, 0.5s;
+}
+
+/*---------- SIGN ----------*/
+.sign {
+  transform: scale(0.1);
+  animation: fistgrow 0.5, fistmove 2s infinite;
+  animation-delay: 0s, 0.5s;
 }

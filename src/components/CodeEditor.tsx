@@ -23,7 +23,7 @@ render(
 
   const container = useRef<HTMLDivElement>(null);
   console.log(container.current?.children[0].innerHTML === "<div><h3>WE DID IT</h3></div>");
-  console.log(container.current?.innerHTML)
+  console.log(container.current?.children[0].innerHTML)
 
   console.log(props);
 
