@@ -27,7 +27,8 @@ render(
   );
   const [result, setResult] = useState<boolean>(false);
   const container = useRef<HTMLDivElement>(null);
-
+  console.log(container.current?.children[0].innerHTML)
+ 
   console.log(container.current?.innerHTML);
 
   console.log(props);
