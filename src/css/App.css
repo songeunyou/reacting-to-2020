@@ -141,6 +141,7 @@ p {
   background: #9c654f;
 }
 .tutorial-page .info .instructions {
+  position: relative;
   color: white;
   border-radius: 6px;
   padding: 35px 40px;
@@ -149,6 +150,28 @@ p {
   padding: 0px;
   border-radius: 6px 6px 0px 0px;
   transition: 1s;
+}
+.tutorial-page .info .instructions .desc-btn {
+  position: absolute;
+  top: -2px;
+  right: 10px;
+  font-size: 12px;
+  padding: 4px 10px;
+  background: rgba(20, 9, 36, 0.6);
+  box-shadow: none;
+  border-radius: 4px;
+}
+.tutorial-page .info .instructions .desc-btn:hover {
+  background: #140924;
+  transform: none;
+}
+.tutorial-page .info .instructions .desc-container {
+  transition: 1s;
+  height: auto;
+  overflow: hidden;
+}
+.tutorial-page .info .instructions .hide-desc {
+  height: 90px;
 }
 .tutorial-page .info .instructions .explanation {
   padding: 35px 40px;
@@ -173,6 +196,7 @@ p {
   padding: 8px 14px !important;
 }
 .tutorial-page .info .next-btn, .tutorial-page .info button {
+  outline: none;
   font-size: 14px;
   background: #140924;
   border-radius: 6px;

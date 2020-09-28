@@ -142,11 +142,38 @@ p {
         }
 
         .instructions {
+            position: relative;
             @include block;
             @include paragraph;
             padding: 0px;
             border-radius: 6px 6px 0px 0px;
             transition: 1s;
+
+            .desc-btn {
+                position: absolute;
+                top: -2px;
+                right: 10px;
+                font-size: 12px;
+                padding: 4px 10px;
+                background: rgba(20, 9, 36, 0.6);
+                box-shadow: none;
+                border-radius: 4px;
+
+                &:hover {
+                    background: rgba(20, 9, 36, 1);
+                    transform: none;
+                }
+            }
+
+            .desc-container {
+                transition: 1s;
+                height: auto;
+                overflow: hidden;
+            }
+
+            .hide-desc {
+                height: 90px;
+            }
 
             .explanation {
                 padding: 35px 40px;
@@ -174,6 +201,7 @@ p {
         }
 
         .next-btn, button {
+            outline: none;
             @include shadow-block;
             cursor: pointer;
             background: $primary-bg;
