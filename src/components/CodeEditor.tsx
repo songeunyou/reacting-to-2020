@@ -6,15 +6,16 @@ import {
   LiveProvider,
   withLive,
 } from "react-live";
+import { Question } from "../objects/Questions";
 
 import "./CodeEditor.scss";
 
 interface CodeEditorProps {
-  question: number,
-  answer: string
+  question: Question,
+  gotoNextQuestion: Function
 }
 
-function CodeEditor(props: CodeEditorProps) {
+function CodeEditor({ question, gotoNextQuestion }: CodeEditorProps) {
   const [code, setCode] = useState<string>(
     `function Component () {
   return (
@@ -32,24 +33,38 @@ render(
   const container = useRef<HTMLDivElement>(null);
   const editor = useRef<HTMLDivElement>(null);
 
-  console.log(props)
-  console.log(editor)
+  const handleSubmit = (event: React.FormEvent) => {
+    // check if answer is correct
+    event.preventDefault();
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
-    setResult(
-      container.current?.children[0].innerHTML.includes("<h3>WE DID IT</h3>") ||
-        false
-    );
-    console.log(
-      container.current?.children[0].innerHTML.includes("<h3>WE DID IT</h3>")
-    );
-    event?.preventDefault();
-  };
+    let condensedCode = document.getElementById("editor")?.firstChild?.firstChild?.textContent?.replace(/\s+/g, '') || "";
+    console.log(container.current?.children[0].innerHTML);
+
+    // check to see if code contains all the strings specified in question.answerStrings
+    if(question.answerStrings) {
+      for(const s of question.answerStrings) {
+        if(!condensedCode.includes(s.replace(/\s+/g, ''))) {
+          setResult(false);
+          return;
+        }
+      }
+    }
+
+    if(!container.current?.children[0].innerHTML.includes(question.answerHTML || "")) {
+      setResult(false);
+      return false;
+    }
+
+    // tests passed
+    setResult(true);
+    gotoNextQuestion();
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit}>  
-        <LiveProvider transformCode={(code) => {setCode(code); return code}} noInline={true} code={code}>
-          <div className="editor" ref={editor}>
+        <LiveProvider noInline={true} code={code}>
+          <div id="editor" className="editor" ref={editor}>
             <LiveEditor />
           </div>
           <div className="error">

@@ -7,6 +7,8 @@ export interface Question {
     explanation: JSX.Element;
     mission: string;
     answer: string;
+    answerHTML?: string; // empty to disable
+    answerStrings?: String[]; // list of strings that must be in the code (with no whitespace)
 }
 
 const M1Q1e =

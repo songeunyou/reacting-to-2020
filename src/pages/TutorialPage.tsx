@@ -20,6 +20,10 @@ function TutorialPage({id}: TutorialProps) {
     setQuestion(0);
   }, [id]);
 
+  const gotoNextQuestion = () => {
+    setQuestion(question + 1)
+  }
+
   return (
     <div className={`tutorial-page module-${id}`}>
         <div className="info">
@@ -47,7 +51,7 @@ function TutorialPage({id}: TutorialProps) {
                 }
             </div>
             <div className="code-editor">
-                <CodeEditor question={question} answer={module.questions[question].answer}/>
+                <CodeEditor question={module.questions[question]} gotoNextQuestion={gotoNextQuestion}/>
             </div>
         </div>
         <div className="visual">
