@@ -31,7 +31,20 @@ function TutorialPage({id}: TutorialProps) {
                     ? <p>{module.questions[question].explanation}</p>
                     : null
                 }
-                {
+
+                <div className="mission">
+                    <h2>Mission</h2>
+                    {
+                        module.questions[question] !== undefined
+                        ? <p>{module.questions[question].mission}</p>
+                        : null
+                    }
+                </div>
+            </div>
+            <div className="code-editor">
+                <CodeEditor />
+            </div>
+            {
                 question < module.questions.length-1
                 ? <button onClick={() => setQuestion(question + 1)}>Next</button>
                 // reached the end of all modules
@@ -46,11 +59,7 @@ function TutorialPage({id}: TutorialProps) {
                           <p>Next Module</p>
                       </Link>
                     </div>
-                }
-            </div>
-            <div className="code-editor">
-                <CodeEditor />
-            </div>
+            }
         </div>
         <div className="visual">
           {

@@ -109,6 +109,20 @@ p {
     display: flex;
     transition: 1s;
 
+    .mission {
+        display: flex;
+        text-align: left;
+        background: rgba(20, 9, 36, 0.8);
+        padding: 20px 40px;
+
+        h2 {
+            font-family: monospace;
+            margin: 0px;
+            margin-right: 18px;
+            font-size: 15px;
+        }
+    }
+
     .info {
         display: flex;
         margin: 20px 10px;
@@ -130,10 +144,12 @@ p {
         .instructions {
             @include block;
             @include paragraph;
+            padding: 0px;
             border-radius: 6px 6px 0px 0px;
             transition: 1s;
 
             .explanation {
+                padding: 35px 40px;
                 h2 {
                     @include title;
                     margin: 0px;
@@ -145,7 +161,7 @@ p {
                 }
 
                 span {
-                    margin: 16px 0px;
+                    margin-top: 16px;
                     background: $primary-bg !important;
                     text-align: left;
 
@@ -163,6 +179,7 @@ p {
             background: $primary-bg;
             color: white;
             border: none;
+            margin-top: 12px;
             padding: 10px 20px;
             transition: 0.1s;
 

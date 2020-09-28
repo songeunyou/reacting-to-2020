@@ -113,6 +113,18 @@ p {
   display: flex;
   transition: 1s;
 }
+.tutorial-page .mission {
+  display: flex;
+  text-align: left;
+  background: rgba(20, 9, 36, 0.8);
+  padding: 20px 40px;
+}
+.tutorial-page .mission h2 {
+  font-family: monospace;
+  margin: 0px;
+  margin-right: 18px;
+  font-size: 15px;
+}
 .tutorial-page .info {
   display: flex;
   margin: 20px 10px;
@@ -134,8 +146,12 @@ p {
   padding: 35px 40px;
   color: white;
   font-size: 16px;
+  padding: 0px;
   border-radius: 6px 6px 0px 0px;
   transition: 1s;
+}
+.tutorial-page .info .instructions .explanation {
+  padding: 35px 40px;
 }
 .tutorial-page .info .instructions .explanation h2 {
   color: white;
@@ -148,7 +164,7 @@ p {
   text-align: left;
 }
 .tutorial-page .info .instructions .explanation span {
-  margin: 16px 0px;
+  margin-top: 16px;
   background: #140924 !important;
   text-align: left;
 }
@@ -167,6 +183,7 @@ p {
   background: #140924;
   color: white;
   border: none;
+  margin-top: 12px;
   padding: 10px 20px;
   transition: 0.1s;
 }
