@@ -128,7 +128,22 @@ p {
     }
 }
 
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.appear {
+  animation: grow;
+  animation-duration: 0.5s;
+}
+
 /*---------- FIRE ----------*/
+
 @keyframes scaleUpDown {
   0%,
   100% {
@@ -308,6 +323,20 @@ p {
   animation-fill-mode: both;
 }
 
+/*---------- SIGN ----------*/
+@keyframes parkmove {
+  0% {transform: translate(0px,0px) scale(0.6)}
+  25% {transform: translate(0px,-20px) scale(0.6) }
+  50% {transform: translate(0px, 0px) scale(0.6) }
+  75% {transform: translate(0px,-20px) scale(0.6)}
+  100%{transform: translate(0px,0px) scale(0.6)}
+}
+
+.park {
+  transform: scale(0.6);
+  animation: parkmove 3s infinite;
+  animation-delay:0.25s;
+}
 
 /*---------- BOAT ----------*/
 @keyframes boatmove {
@@ -320,6 +349,77 @@ p {
 
 .boat {
   transform: scale(0.15);
-  animation: boatmove 4s infinite;
+  animation: noisegrow 0.5s, boatmove 4s infinite;
+  animation-delay: 0s, 0.5s;
+}
+
+
+/*---------- PROTESTER ----------*/
+@keyframes protestermove {
+  0% {transform: translate(0px,0px) scale(0.75)}
+  25% {transform: translate(0px,-20px) scale(0.75) }
+  50% {transform: translate(0px, 0px) scale(0.75) }
+  75% {transform: translate(0px,-20px) scale(0.75)}
+  100%{transform: translate(0px,0px) scale(0.75)}
+}
+
+.protester {
+  transform: scale(0.75);
+  animation: protestermove 4s infinite;
   animation-delay:0.25s;
+}
+
+/*---------- NOISE ----------*/
+@keyframes noisegrow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.15);
+  }
+}
+
+@keyframes noisemove {
+  0% {transform:rotate(-10deg) translate(0px,0px) scale(0.15)}
+  25% {transform:rotate(10deg) translate(0px,-10px) scale(0.15) }
+  50% {transform:rotate(-10deg) translate(0px, 0px) scale(0.15) }
+  75% {transform:rotate(10deg) translate(0px,-10px) scale(0.15)}
+  100%{transform:rotate(-10deg) translate(0px,0px) scale(0.15)}
+}
+
+.noise {
+  transform: scale(0.15);
+  animation: noisegrow 0.5s, noisemove 1s infinite;
+  animation-delay:0s, 0.5s;
+}
+
+/*---------- FIST ----------*/
+@keyframes fistgrow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.1);
+  }
+}
+
+@keyframes fistmove {
+  0% {transform: translate(0px,0px) scale(0.1)}
+  25% {transform: translate(0px,-10px) scale(0.1) }
+  50% {transform: translate(0px, 0px) scale(0.1) }
+  75% {transform: translate(0px,-10px) scale(0.1)}
+  100%{transform: translate(0px,0px) scale(0.1)}
+}
+
+.fist {
+  transform: scale(0.1);
+  animation: fistgrow 0.5s, fistmove 2s infinite;
+  animation-delay: 0s, 0.5s;
+}
+
+/*---------- SIGN ----------*/
+.sign {
+  transform: scale(0.1);
+  animation: fistgrow 0.5, fistmove 2s infinite;
+  animation-delay: 0s, 0.5s;
 }

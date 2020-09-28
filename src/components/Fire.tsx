@@ -6,7 +6,7 @@ interface FireProps {
 
 function Fire({style}:FireProps) {
     return (
-        <div className="fire" style={style}>
+        <div className="fire appear" style={style}>
             <div className="fire-left">
                 <div className="main-fire"></div>
                 <div className="particle-fire"></div>
