@@ -101,8 +101,8 @@ const M2Q1: Question = {
 
 const M2Q2: Question = {
     id: 2,
-    explanation: <div/>,
-    mission: "M2Q2. This is the second mission that you should accomplish",
+    explanation: M2Q1e,
+    mission: "Update the state so that COVID-19 spreads across the world!",
     answer: "M2Q2. The answer"
 }
 
