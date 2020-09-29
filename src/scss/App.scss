@@ -101,15 +101,15 @@ p {
 /*---------- TUTORIAL PAGE ----------*/
 
 .module-1 {
-    background: #96ced4;
+    background: #c1d9d6;
 }
 
 .module-2 {
-    background: #d9c293;
+    background: #b8bfd9;
 }
 
 .module-3 {
-    background: #e0b09d;
+    background: #dbc8b2;
 }
 
 .tutorial-page {
@@ -124,7 +124,7 @@ p {
     .mission {
         display: flex;
         text-align: left;
-        background: rgba(20, 9, 36, 0.8);
+        background: rgba(50, 42, 56, 0.6);
         padding: 20px 40px;
 
         h2 {
@@ -142,15 +142,15 @@ p {
         flex-grow: 1;
 
         .inst-module-1 {
-            background: #429ea8;
+            background: #8bada9;
         }
 
         .inst-module-2 {
-            background: #967635;
+            background: #8485ad;
         }
 
         .inst-module-3 {
-            background: #9c654f;
+            background: #a68660;
         }
 
         .instructions {
@@ -184,15 +184,15 @@ p {
             }
 
             .hide-desc {
-                height: 90px;
+                height: 84px;
             }
 
             .explanation {
-                padding: 35px 40px;
+                padding: 25px 40px 32px 40px;
                 h2 {
                     @include title;
                     margin: 0px;
-                    margin-bottom: 12px;
+                    margin-bottom: 15px;
                 }
 
                 p {
@@ -257,8 +257,8 @@ p {
         border-radius: 6px;
         margin: 20px 10px;
         width: 100%;
-        background-color: #198ed1;
-        background-image: linear-gradient(20deg, #198ed1 0%, #67bfb5 100%);
+        background-color: #2179ad;
+        background-image: linear-gradient(20deg, #2179ad 0%, #9edbd4 100%);
     }
 }
 

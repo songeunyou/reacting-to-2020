@@ -62,7 +62,7 @@ p {
 }
 .home-page .subtitle, .completed-page .subtitle {
   font-size: 14px;
-  background: #140924;
+  background: #1a161f;
   color: #EAB286;
   border-radius: 6px;
   font-family: monospace;
@@ -103,15 +103,15 @@ p {
 
 /*---------- TUTORIAL PAGE ----------*/
 .module-1 {
-  background: #96ced4;
+  background: #c1d9d6;
 }
 
 .module-2 {
-  background: #d9c293;
+  background: #b8bfd9;
 }
 
 .module-3 {
-  background: #e0b09d;
+  background: #dbc8b2;
 }
 
 .tutorial-page {
@@ -126,7 +126,7 @@ p {
 .tutorial-page .mission {
   display: flex;
   text-align: left;
-  background: rgba(20, 9, 36, 0.8);
+  background: rgba(50, 42, 56, 0.6);
   padding: 20px 40px;
 }
 .tutorial-page .mission h2 {
@@ -142,13 +142,13 @@ p {
   flex-grow: 1;
 }
 .tutorial-page .info .inst-module-1 {
-  background: #429ea8;
+  background: #8bada9;
 }
 .tutorial-page .info .inst-module-2 {
-  background: #967635;
+  background: #8485ad;
 }
 .tutorial-page .info .inst-module-3 {
-  background: #9c654f;
+  background: #a68660;
 }
 .tutorial-page .info .instructions {
   position: relative;
@@ -181,24 +181,24 @@ p {
   overflow: hidden;
 }
 .tutorial-page .info .instructions .hide-desc {
-  height: 90px;
+  height: 84px;
 }
 .tutorial-page .info .instructions .explanation {
-  padding: 35px 40px;
+  padding: 25px 40px 32px 40px;
 }
 .tutorial-page .info .instructions .explanation h2 {
   color: white;
   font-family: ObviouslyWide;
   font-size: 26px;
   margin: 0px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 .tutorial-page .info .instructions .explanation p {
   text-align: left;
 }
 .tutorial-page .info .instructions .explanation span {
   margin-top: 16px;
-  background: #140924 !important;
+  background: #1a161f !important;
   text-align: left;
 }
 .tutorial-page .info .instructions .explanation span code {
@@ -208,13 +208,13 @@ p {
 .tutorial-page .info .next-btn, .tutorial-page .info button {
   outline: none;
   font-size: 14px;
-  background: #140924;
+  background: #1a161f;
   border-radius: 6px;
   font-family: monospace;
   padding: 12px 20px;
   box-shadow: 0px 4px 10px -4px rgba(20, 9, 36, 0.8);
   cursor: pointer;
-  background: #140924;
+  background: #1a161f;
   color: white;
   border: none;
   margin-top: 12px;
@@ -235,7 +235,7 @@ p {
   color: white;
   border-radius: 6px;
   padding: 35px 40px;
-  background: #140924;
+  background: #1a161f;
   border-radius: 0px 0px 6px 6px;
   height: 100%;
   flex-grow: 1;
@@ -244,18 +244,18 @@ p {
   overflow: hidden;
 }
 .tutorial-page .info .code-editor .monaco-editor, .tutorial-page .info .code-editor .monaco-editor-background, .tutorial-page .info .code-editor .monaco-editor .margin, .tutorial-page .info .code-editor .minimap-decorations-layer {
-  background: #140924;
+  background: #1a161f;
 }
 .tutorial-page .visual {
   border-radius: 6px;
   margin: 20px 10px;
   width: 100%;
-  background-color: #198ed1;
-  background-image: linear-gradient(20deg, #198ed1 0%, #67bfb5 100%);
+  background-color: #2179ad;
+  background-image: linear-gradient(20deg, #2179ad 0%, #9edbd4 100%);
 }
 
 .callout {
-  background: #140924;
+  background: #1a161f;
   border-radius: 4px;
   display: flex;
   padding: 10px 12px;
