@@ -10,10 +10,11 @@ The value that gamification brings in is summarized very effectively in the foll
 > Gamification techniques are intended to leverage people’s natural desires for socializing, learning, mastery, competition, achievement, status, self-expression, altruism or closure. Gamification strategies use rewards for players who accomplish desired tasks or competition to engage players. Types of rewards include points, achievement badges or levels, the filling of a progress bar or providing the user with virtual currency. Making the rewards for accomplishing tasks visible to other players or providing leaderboards are ways of encouraging players to compete.
 
 ## Screenshots
-
-![Nested Components Level](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/234/395/datas/original.png)
-![State Level](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/234/393/datas/original.png)
-![List Level](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/234/405/datas/original.png)
+<div style="text-align: center">
+  <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/234/395/datas/original.png" width="410"/>
+  <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/234/393/datas/original.png" width="410"/> 
+  <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/234/405/datas/original.png" width="410"/> 
+</div>
 
 ## Features
 
