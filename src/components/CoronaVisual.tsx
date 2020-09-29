@@ -28,21 +28,18 @@ function CoronaVisual({id}: CoronaVisualProps) {
             return (
                 <div>
                     <World style={{transform: "scale(0.9) translateY(50px)" }}/>
-                    <Corona className="corona" style={{top:"160px", marginLeft:"-360px"}}/>
-                    <Corona className="corona" style={{top:"15px", marginLeft:"-380px"}}/>
-                    <Corona className="corona" style={{marginLeft:"-400px"}}/>
-                    <Corona className="corona" style={{top:"40px", marginLeft:"-430px"}}/>
+                    <Corona className="corona" style={{top:"80px", marginLeft:"-340px"}}/>
+                    <Corona className="corona" style={{top:"-30px", marginLeft:"-340px"}}/>
+                    <Corona className="corona" style={{marginLeft:"-380px"}}/>
+                    <Corona className="corona" style={{top:"-10px", marginLeft:"-400px"}}/>
 
-                    <Corona className="corona" style={{marginLeft:"-450px"}}/>
-                    <Corona className="corona" style={{top:"50px", marginLeft:"-480px"}}/>
+                    <Corona className="corona" style={{marginLeft:"-420px"}}/>
+                    <Corona className="corona" style={{top:"50px", marginLeft:"-450px"}}/>
 
-                    <Corona className="corona" style={{top:"130px", marginLeft:"-490px"}}/>
-                    <Corona className="corona" style={{top:"100px", marginLeft:"-530px"}}/>
-                    <Corona className="corona" style={{top:"10px", marginLeft:"-560px"}}/>
+                    <Corona className="corona" style={{top:"70px", marginLeft:"-530px"}}/>
+                    <Corona className="corona" style={{top:"-30px", marginLeft:"-510px"}}/>
 
-                    <Corona className="corona" style={{top:"150px", marginLeft:"-600px"}}/>
-                    <Corona className="corona" style={{top:"70px", marginLeft:"-640px"}}/>
-                    <Corona className="corona" style={{top:"30px", marginLeft:"-660px"}}/>
+                    <Corona className="corona" style={{top:"10px", marginLeft:"-580px"}}/>
                 </div>
             )
         case 3:

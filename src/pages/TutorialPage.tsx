@@ -125,7 +125,10 @@ function TutorialPage({id}: TutorialProps) {
         <div className="visual">
           {
             id == 1 ?
-            <AuForestFire id={questionNumber} />
+            questionNumber == module.questions.length-1 ?
+            <AuForestFire id={5} />
+            : <AuForestFire id={questionNumber} />
+            
             : id == 2 ?
             <CoronaVisual id={questionNumber} />
             : id == 3 ?

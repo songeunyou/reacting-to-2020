@@ -50,6 +50,19 @@ function AuForestFire({id}: AuForestFireProps) {
                     <Sailboat className="boat" style={{position: "absolute", top: "200px", marginLeft: "-800px"}}/>
                 </div>
             )
+        case 5:
+            return (
+                <div>
+                    <Australia style={{position: "relative", transform: "scale(0.6)", bottom: "-20px"}}/>
+                    <Fire style={{top: "380px", marginLeft: "460px"}}/>
+                    <Fire style={{top: "280px", marginLeft: "460px"}}/>
+                    <Fire style={{top: "230px", marginLeft: "340px"}}/>
+                    <Fire style={{top: "330px", marginLeft: "340px"}}/>
+                    <Fire style={{top: "360px", marginLeft: "220px"}}/>
+                    <Fire style={{top: "270px", marginLeft: "220px"}}/>
+                    <Sailboat className="boat" style={{position: "absolute", top: "200px", marginLeft: "-800px"}}/>
+                </div>
+            )
         default:
             return (
                 <Australia style={{position: "relative", transform: "scale(0.6)", bottom: "30px"}}/>

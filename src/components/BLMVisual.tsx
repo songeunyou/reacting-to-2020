@@ -57,7 +57,7 @@ function BLMVisual({id}: BLMVisualProps) {
         default:
             return (
                 <div>
-                    <USA style={{position:"relative", top:"120px"}}/>
+                    <USA style={{transform:"scale(0.8)", position:"relative", top:"120px"}}/>
                 </div>
 
             )
