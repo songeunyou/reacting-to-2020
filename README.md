@@ -49,4 +49,4 @@ https://reacting-to-2020-gamma.vercel.app/
 
 ## Licensing
 
-(The code in this project is licensed under MIT license.)[LICENSE]
+The code in this project is licensed under MIT license.
