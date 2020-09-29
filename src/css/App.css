@@ -62,7 +62,7 @@ p {
 }
 .home-page .subtitle, .completed-page .subtitle {
   font-size: 14px;
-  background: #140924;
+  background: #1a161f;
   color: #EAB286;
   border-radius: 6px;
   font-family: monospace;
@@ -103,15 +103,15 @@ p {
 
 /*---------- TUTORIAL PAGE ----------*/
 .module-1 {
-  background: #96ced4;
+  background: #c1dbd7;
 }
 
 .module-2 {
-  background: #d9c293;
+  background: #dbd3d7;
 }
 
 .module-3 {
-  background: #e0b09d;
+  background: #ebdac5;
 }
 
 .tutorial-page {
@@ -119,14 +119,14 @@ p {
   width: 100vw;
   height: 100%;
   top: 0px;
-  padding: 60px;
+  padding: 0 60px;
   display: flex;
   transition: 1s;
 }
 .tutorial-page .mission {
   display: flex;
   text-align: left;
-  background: rgba(20, 9, 36, 0.8);
+  background: rgba(50, 42, 56, 0.6);
   padding: 20px 40px;
 }
 .tutorial-page .mission h2 {
@@ -144,13 +144,13 @@ p {
   flex-grow: 1;
 }
 .tutorial-page .info .inst-module-1 {
-  background: #429ea8;
+  background: #88b3ad;
 }
 .tutorial-page .info .inst-module-2 {
-  background: #967635;
+  background: #997683;
 }
 .tutorial-page .info .inst-module-3 {
-  background: #9c654f;
+  background: #c99b5f;
 }
 .tutorial-page .info .instructions {
   position: relative;
@@ -183,24 +183,24 @@ p {
   overflow: hidden;
 }
 .tutorial-page .info .instructions .hide-desc {
-  height: 90px;
+  height: 84px;
 }
 .tutorial-page .info .instructions .explanation {
-  padding: 35px 40px;
+  padding: 25px 40px 32px 40px;
 }
 .tutorial-page .info .instructions .explanation h2 {
   color: white;
   font-family: ObviouslyWide;
   font-size: 26px;
   margin: 0px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 .tutorial-page .info .instructions .explanation p {
   text-align: left;
 }
 .tutorial-page .info .instructions .explanation span {
   margin-top: 16px;
-  background: #140924 !important;
+  background: #1a161f !important;
   text-align: left;
 }
 .tutorial-page .info .instructions .explanation span code {
@@ -209,7 +209,7 @@ p {
 }
 .tutorial-page .info .toast {
   font-size: 14px;
-  background: #140924;
+  background: #1a161f;
   border-radius: 6px;
   font-family: monospace;
   padding: 12px 20px;
@@ -250,13 +250,13 @@ p {
 .tutorial-page .info .next-btn, .tutorial-page .info button {
   outline: none;
   font-size: 14px;
-  background: #140924;
+  background: #1a161f;
   border-radius: 6px;
   font-family: monospace;
   padding: 12px 20px;
   box-shadow: 0px 4px 10px -4px rgba(20, 9, 36, 0.8);
   cursor: pointer;
-  background: #140924;
+  background: #1a161f;
   color: white;
   border: none;
   margin-top: 12px;
@@ -277,7 +277,7 @@ p {
   color: white;
   border-radius: 6px;
   padding: 35px 40px;
-  background: #140924;
+  background: #1a161f;
   border-radius: 0px 0px 6px 6px;
   height: 100%;
   width: 100%;
@@ -287,18 +287,28 @@ p {
   overflow: scroll;
 }
 .tutorial-page .info .code-editor .monaco-editor, .tutorial-page .info .code-editor .monaco-editor-background, .tutorial-page .info .code-editor .monaco-editor .margin, .tutorial-page .info .code-editor .minimap-decorations-layer {
-  background: #140924;
+  background: #1a161f;
+}
+.tutorial-page .info .editor {
+  padding: 10px 29px !important;
+  font-size: 15px !important;
+}
+.tutorial-page .info textarea, .tutorial-page .info textarea:focus {
+  outline: 0px;
+}
+.tutorial-page .info .error {
+  margin: 20px 40px;
 }
 .tutorial-page .visual {
   border-radius: 6px;
   margin: 20px 10px;
   width: 100%;
-  background-color: #198ed1;
-  background-image: linear-gradient(20deg, #198ed1 0%, #67bfb5 100%);
+  background-color: #1e83bd;
+  background-image: linear-gradient(20deg, #1e83bd 0%, #9fe3db 100%);
 }
 
 .callout {
-  background: #140924;
+  background: #1a161f;
   border-radius: 4px;
   display: flex;
   padding: 10px 12px;
@@ -327,8 +337,16 @@ p {
   animation-duration: 0.5s;
 }
 
-/*---------- PROTESTER ----------*/
-@keyframes protestermove {
+/*---------- WORLD ----------*/
+@keyframes worldgrow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.75);
+  }
+}
+@keyframes worldmove {
   0% {
     transform: translate(0px, 0px) scale(0.75);
   }
@@ -345,81 +363,56 @@ p {
     transform: translate(0px, 0px) scale(0.75);
   }
 }
-.protester {
+.world {
   transform: scale(0.75);
-  animation: protestermove 4s infinite;
-  animation-delay: 0.25s;
+  animation: worldgrow 1s, worldmove 4s infinite;
+  animation-delay: 0s, 1s;
 }
 
-/*---------- NOISE ----------*/
-@keyframes noisegrow {
+@keyframes coronagrow {
   0% {
     transform: scale(0);
   }
   100% {
-    transform: scale(0.15);
+    transform: scale(0.05);
   }
 }
-@keyframes noisemove {
+@keyframes coronamove {
   0% {
-    transform: rotate(-10deg) translate(0px, 0px) scale(0.15);
+    transform: translate(0px, 0px) scale(0.05);
   }
   25% {
-    transform: rotate(10deg) translate(0px, -10px) scale(0.15);
+    transform: translate(0px, -5px) scale(0.05);
   }
   50% {
-    transform: rotate(-10deg) translate(0px, 0px) scale(0.15);
+    transform: translate(0px, 0px) scale(0.05);
   }
   75% {
-    transform: rotate(10deg) translate(0px, -10px) scale(0.15);
+    transform: translate(0px, -5px) scale(0.05);
   }
   100% {
-    transform: rotate(-10deg) translate(0px, 0px) scale(0.15);
+    transform: translate(0px, 0px) scale(0.05);
   }
 }
-.noise {
-  transform: scale(0.15);
-  animation: noisegrow 0.5s, noisemove 1s infinite;
-  animation-delay: 0s, 0.5s;
+@keyframes spin {
+  from {
+    transform: scale(0.8) rotate(0deg);
+  }
+  to {
+    transform: scale(0.8) rotate(360deg);
+  }
+}
+.corona {
+  position: absolute;
+  transform: scale(0.05);
+  animation: coronagrow 1s, coronamove 2s infinite;
+  animation-delay: 0s, 1s;
 }
 
-/*---------- FIST ----------*/
-@keyframes fistgrow {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(0.1);
-  }
-}
-@keyframes fistmove {
-  0% {
-    transform: translate(0px, 0px) scale(0.1);
-  }
-  25% {
-    transform: translate(0px, -10px) scale(0.1);
-  }
-  50% {
-    transform: translate(0px, 0px) scale(0.1);
-  }
-  75% {
-    transform: translate(0px, -10px) scale(0.1);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(0.1);
-  }
-}
-.fist {
-  transform: scale(0.1);
-  animation: fistgrow 0.5s, fistmove 2s infinite;
-  animation-delay: 0s, 0.5s;
-}
-
-/*---------- SIGN ----------*/
-.sign {
-  transform: scale(0.1);
-  animation: fistgrow 0.5, fistmove 2s infinite;
-  animation-delay: 0s, 0.5s;
+.coronamutate {
+  position: relative;
+  transform: scale(0.8);
+  animation: spin 2s infinite;
 }
 
 /*# sourceMappingURL=App.css.map */

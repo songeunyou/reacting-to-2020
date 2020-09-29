@@ -101,15 +101,15 @@ p {
 /*---------- TUTORIAL PAGE ----------*/
 
 .module-1 {
-    background: #96ced4;
+    background: #c1dbd7;
 }
 
 .module-2 {
-    background: #d9c293;
+    background: #dbd3d7;
 }
 
 .module-3 {
-    background: #e0b09d;
+    background: #ebdac5;
 }
 
 .tutorial-page {
@@ -124,7 +124,7 @@ p {
     .mission {
         display: flex;
         text-align: left;
-        background: rgba(20, 9, 36, 0.8);
+        background: rgba(50, 42, 56, 0.6);
         padding: 20px 40px;
 
         h2 {
@@ -144,15 +144,15 @@ p {
         flex-grow: 1;
 
         .inst-module-1 {
-            background: #429ea8;
+            background: #88b3ad;
         }
 
         .inst-module-2 {
-            background: #967635;
+            background: #997683;
         }
 
         .inst-module-3 {
-            background: #9c654f;
+            background: #c99b5f;
         }
 
         .instructions {
@@ -186,15 +186,15 @@ p {
             }
 
             .hide-desc {
-                height: 90px;
+                height: 84px;
             }
 
             .explanation {
-                padding: 35px 40px;
+                padding: 25px 40px 32px 40px;
                 h2 {
                     @include title;
                     margin: 0px;
-                    margin-bottom: 12px;
+                    margin-bottom: 15px;
                 }
 
                 p {
@@ -280,14 +280,27 @@ p {
                 background: $primary-bg;
             }
         }
+
+        .editor {
+            padding: 10px 29px !important;
+            font-size: 15px !important;
+        }
+
+        textarea, textarea:focus {
+            outline: 0px;
+        }
+
+        .error {
+            margin: 20px 40px;
+        }
     }
 
     .visual {
         border-radius: 6px;
         margin: 20px 10px;
         width: 100%;
-        background-color: #198ed1;
-        background-image: linear-gradient(20deg, #198ed1 0%, #67bfb5 100%);
+        background-color: #1e83bd;
+        background-image: linear-gradient(20deg, #1e83bd 0%, #9fe3db 100%);
     }
 }
 
@@ -373,7 +386,7 @@ p {
         transform:scale(0.8) rotate(360deg);
     }
 }
-  
+
 .corona {
     position: absolute;
     transform: scale(0.05);
