@@ -103,7 +103,7 @@ p {
 
 /*---------- TUTORIAL PAGE ----------*/
 .module-1 {
-  background: #c1d9d6;
+  background: #c1dbd7;
 }
 
 .module-2 {
@@ -144,13 +144,13 @@ p {
   flex-grow: 1;
 }
 .tutorial-page .info .inst-module-1 {
-  background: #8bada9;
+  background: #88b3ad;
 }
 .tutorial-page .info .inst-module-2 {
-  background: #917483;
+  background: #997683;
 }
 .tutorial-page .info .inst-module-3 {
-  background: #c29861;
+  background: #c99b5f;
 }
 .tutorial-page .info .instructions {
   position: relative;
@@ -209,7 +209,7 @@ p {
 }
 .tutorial-page .info .toast {
   font-size: 14px;
-  background: #140924;
+  background: #1a161f;
   border-radius: 6px;
   font-family: monospace;
   padding: 12px 20px;
@@ -337,8 +337,16 @@ p {
   animation-duration: 0.5s;
 }
 
-/*---------- PROTESTER ----------*/
-@keyframes protestermove {
+/*---------- WORLD ----------*/
+@keyframes worldgrow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.75);
+  }
+}
+@keyframes worldmove {
   0% {
     transform: translate(0px, 0px) scale(0.75);
   }
@@ -355,81 +363,56 @@ p {
     transform: translate(0px, 0px) scale(0.75);
   }
 }
-.protester {
+.world {
   transform: scale(0.75);
-  animation: protestermove 4s infinite;
-  animation-delay: 0.25s;
+  animation: worldgrow 1s, worldmove 4s infinite;
+  animation-delay: 0s, 1s;
 }
 
-/*---------- NOISE ----------*/
-@keyframes noisegrow {
+@keyframes coronagrow {
   0% {
     transform: scale(0);
   }
   100% {
-    transform: scale(0.15);
+    transform: scale(0.05);
   }
 }
-@keyframes noisemove {
+@keyframes coronamove {
   0% {
-    transform: rotate(-10deg) translate(0px, 0px) scale(0.15);
+    transform: translate(0px, 0px) scale(0.05);
   }
   25% {
-    transform: rotate(10deg) translate(0px, -10px) scale(0.15);
+    transform: translate(0px, -5px) scale(0.05);
   }
   50% {
-    transform: rotate(-10deg) translate(0px, 0px) scale(0.15);
+    transform: translate(0px, 0px) scale(0.05);
   }
   75% {
-    transform: rotate(10deg) translate(0px, -10px) scale(0.15);
+    transform: translate(0px, -5px) scale(0.05);
   }
   100% {
-    transform: rotate(-10deg) translate(0px, 0px) scale(0.15);
+    transform: translate(0px, 0px) scale(0.05);
   }
 }
-.noise {
-  transform: scale(0.15);
-  animation: noisegrow 0.5s, noisemove 1s infinite;
-  animation-delay: 0s, 0.5s;
+@keyframes spin {
+  from {
+    transform: scale(0.8) rotate(0deg);
+  }
+  to {
+    transform: scale(0.8) rotate(360deg);
+  }
+}
+.corona {
+  position: absolute;
+  transform: scale(0.05);
+  animation: coronagrow 1s, coronamove 2s infinite;
+  animation-delay: 0s, 1s;
 }
 
-/*---------- FIST ----------*/
-@keyframes fistgrow {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(0.1);
-  }
-}
-@keyframes fistmove {
-  0% {
-    transform: translate(0px, 0px) scale(0.1);
-  }
-  25% {
-    transform: translate(0px, -10px) scale(0.1);
-  }
-  50% {
-    transform: translate(0px, 0px) scale(0.1);
-  }
-  75% {
-    transform: translate(0px, -10px) scale(0.1);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(0.1);
-  }
-}
-.fist {
-  transform: scale(0.1);
-  animation: fistgrow 0.5s, fistmove 2s infinite;
-  animation-delay: 0s, 0.5s;
-}
-
-/*---------- SIGN ----------*/
-.sign {
-  transform: scale(0.1);
-  animation: fistgrow 0.5, fistmove 2s infinite;
-  animation-delay: 0s, 0.5s;
+.coronamutate {
+  position: relative;
+  transform: scale(0.8);
+  animation: spin 2s infinite;
 }
 
 /*# sourceMappingURL=App.css.map */
