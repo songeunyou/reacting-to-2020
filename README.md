@@ -1,35 +1,52 @@
-# reacting-to-2020
-React tutorial that walks you through major events that happened in 2020
+![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
 
-## Available Scripts
+# Reacting To 2020
+> Gamified React Tutorial
 
-In the project directory, you can run:
+Can't stand those boring react tutorials in which you click away after 5 minutes? Have no fear, Reacting To 2020 is here! This is a Gamified React tutorial that walks you through major events that happened in 2020.
 
-### `npm start`
+## Purpose
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The value that gamification brings in is summarized very effectively in the following statement as per Wikipedia:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+> Gamification techniques are intended to leverage people’s natural desires for socializing, learning, mastery, competition, achievement, status, self-expression, altruism or closure. Gamification strategies use rewards for players who accomplish desired tasks or competition to engage players. Types of rewards include points, achievement badges or levels, the filling of a progress bar or providing the user with virtual currency. Making the rewards for accomplishing tasks visible to other players or providing leaderboards are ways of encouraging players to compete.
 
-### `npm test`
+## Installing / Getting started
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A quick introduction to get the app up & running:
 
-### `npm run build`
+```shell
+git clone https://github.com/songeunyou/reacting-to-2020/
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This clones our repository, installs the necessary dependencies and runs the React app in a development server!
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Building for Production
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Heres how to build the app for production:
 
-## Learn More
+```shell
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+It correctly bundles React in production mode and optimizes the build for the best performance, and outputs to the 'build' folder
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Features
+
+What's all the bells and whistles this project can perform?
+* What's the main functionality
+* You can also do another thing
+* If you get really randy, you can even do this
+
+## Contributing
+
+Check out [CONTRIBUTING](CONTRIBUTING.md)
+
+## Live Demo
+https://reacting-to-2020-gamma.vercel.app/
+
+## Licensing
+
+(The code in this project is licensed under MIT license.)[LICENSE]
