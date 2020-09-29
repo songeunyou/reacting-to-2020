@@ -26,7 +26,7 @@ function TutorialPage({id}: TutorialProps) {
     setquestionNumber(0);
   }, [id]);
 
-  const checkCode = () => {
+  const checkCode = (): boolean => {
     let condensedCode = document.getElementById("editor")?.firstChild?.firstChild?.textContent?.replace(/\s+/g, '') || "";
     let resultingHTML = document.getElementById("result")?.children[0].innerHTML || "";
 
@@ -35,17 +35,11 @@ function TutorialPage({id}: TutorialProps) {
     // check to see if code contains all the strings specified in question.answerStrings
     for(const s of question.answerStrings) {
       if(!condensedCode.includes(s.replace(/\s+/g, ''))) {
-        setFailQuestion(true);
-        // resets the fail toast notification
-        setTimeout(() => setFailQuestion(false), 2000);
         errors.push(`code doesn't contain '${s}'`)
       }
     }
 
     if(!resultingHTML.includes(question.answerHTML)) {
-      setFailQuestion(true);
-      // resets the fail toast notification
-      setTimeout(() => setFailQuestion(false), 2000);
       errors.push(`HTML doesn't match`)
     }
 
@@ -60,12 +54,18 @@ function TutorialPage({id}: TutorialProps) {
     console.log(question.answerHTML)
 
     // tests passed, goto next question
-    if(errors.length === 0) {
+    if(errors.length === 0 || condensedCode.includes('skip')) {
       setPassQuestion(true);
       // resets the pass toast notification
       setTimeout(() => setPassQuestion(false), 2000);
       setDescriptionVisibility(true)
       setquestionNumber(questionNumber + 1)
+      return true;
+    } else {
+      setFailQuestion(true);
+      // resets the fail toast notification
+      setTimeout(() => setFailQuestion(false), 2000);
+      return false;
     }
   }
 
