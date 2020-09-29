@@ -125,11 +125,11 @@ function TutorialPage({id}: TutorialProps) {
         <div className="visual">
           {
             id == 1 ?
-            <AuForestFire id={questionNumber+1} />
+            <AuForestFire id={questionNumber} />
             : id == 2 ?
-            <CoronaVisual id={questionNumber+1} />
+            <CoronaVisual id={questionNumber} />
             : id == 3 ?
-            <BLMVisual id={questionNumber+1} />
+            <BLMVisual id={questionNumber} />
             : null
           }
         </div>

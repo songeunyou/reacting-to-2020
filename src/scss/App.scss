@@ -274,7 +274,7 @@ p {
             flex-grow: 1;
             text-align: left;
             padding: 0px;
-            overflow: scroll;
+            overflow: auto;
 
             .monaco-editor, .monaco-editor-background, .monaco-editor .margin, .minimap-decorations-layer {
                 background: $primary-bg;
