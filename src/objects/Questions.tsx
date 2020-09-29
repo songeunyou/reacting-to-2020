@@ -165,6 +165,28 @@ const M1Q4: Question = {
   answerStrings: ["People", "Animal"],
 };
 
+
+const M1Q5e = (
+  <div className="explanation">
+    <h2>Yay! You did it!</h2>
+    <p>
+      You saved the people and animals of Australia by creating
+      a boat for them to escape on! Time to celebrate 🥳
+    </p>
+  </div>
+);
+
+
+const M1Q5: Question = {
+  id: 5,
+  explanation: M1Q5e,
+  mission: "You did it!",
+  answer: "",
+  starterCode: "",
+  answerHTML: "",
+  answerStrings: [],
+};
+
 const M2Q1s = `function Coronavirus() {
     // Declare a state variable for the first infected country
     // and a function to update the country
@@ -282,6 +304,25 @@ const M2Q3: Question = {
   starterCode: M2Q3s,
   answerHTML: "",
   answerStrings: ["React.useEffect", "cleanup"],
+};
+
+const M2Q4e = (
+  <div className="explanation">
+    <h2>Yay! You did it!</h2>
+    <p>
+      You solved it! Time to celebrate 🥳
+    </p>
+  </div>
+);
+
+const M2Q4: Question = {
+  id: 4,
+  explanation: M2Q4e,
+  mission: "You did it!",
+  answer: "",
+  starterCode: "",
+  answerHTML: "",
+  answerStrings: [],
 };
 
 const M3Q1s = `
@@ -456,6 +497,26 @@ const M3Q3: Question = {
   answerStrings: ["map", "state={state}"],
 };
 
-export const M1Questions = [M1Q1, M1Q2, M1Q3, M1Q4];
-export const M2Questions = [M2Q1, M2Q2, M2Q3];
-export const M3Questions = [M3Q1, M3Q2, M3Q3];
+const M3Q4e = (
+  <div className="explanation">
+    <h2>Yay! You did it!</h2>
+    <p>
+      You spread the message across the United States of America! Time to celebrate 🥳
+    </p>
+  </div>
+);
+
+
+const M3Q4: Question = {
+  id: 4,
+  explanation: M3Q4e,
+  mission: "You did it!",
+  answer: "",
+  starterCode: "",
+  answerHTML: "",
+  answerStrings: [],
+};
+
+export const M1Questions = [M1Q1, M1Q2, M1Q3, M1Q4, M1Q5];
+export const M2Questions = [M2Q1, M2Q2, M2Q3, M2Q4];
+export const M3Questions = [M3Q1, M3Q2, M3Q3, M3Q4];
