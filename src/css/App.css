@@ -117,7 +117,7 @@ p {
 .tutorial-page {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   top: 0px;
   padding: 60px;
   display: flex;
@@ -284,7 +284,7 @@ p {
   flex-grow: 1;
   text-align: left;
   padding: 0px;
-  overflow: hidden;
+  overflow: scroll;
 }
 .tutorial-page .info .code-editor .monaco-editor, .tutorial-page .info .code-editor .monaco-editor-background, .tutorial-page .info .code-editor .monaco-editor .margin, .tutorial-page .info .code-editor .minimap-decorations-layer {
   background: #140924;
