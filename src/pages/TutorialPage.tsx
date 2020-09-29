@@ -16,7 +16,7 @@ function TutorialPage({id}: TutorialProps) {
   const nextModuleIndex = Number(id) + 1;
   const [questionNumber, setquestionNumber] = useState(0);
   const [description, setDescriptionVisibility] = useState(true);
-  
+
   const question = module.questions[questionNumber];
 
   useEffect(() => {
@@ -80,7 +80,11 @@ function TutorialPage({id}: TutorialProps) {
                 </div>
             </div>
             <div className="code-editor">
-                <CodeEditor question={question}/>
+                {
+                    question !== undefined
+                    ? <CodeEditor question={question}/>
+                    : null
+                }
             </div>
             {
                 questionNumber < module.questions.length-1 ?
