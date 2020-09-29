@@ -115,7 +115,7 @@ p {
 .tutorial-page {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     top: 0px;
     padding: 60px;
     display: flex;
@@ -136,8 +136,10 @@ p {
     }
 
     .info {
+        position: relative;
         display: flex;
         margin: 20px 10px;
+        align-items: center;
         flex-direction: column;
         flex-grow: 1;
 
@@ -212,6 +214,32 @@ p {
             }
         }
 
+        .toast {
+            @include shadow-block;
+            background: #eb7831;
+            padding: 8px 16px;
+            color: white;
+            box-shadow: 0px 2px 8px -2px rgba(235, 120, 49,0.8);
+            position: absolute;
+            bottom: 60px;
+            animation-name: toast-notif;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out;
+        }
+
+        .pass {
+            background: #3de396;
+            box-shadow: 0px 2px 8px -2px rgba(61, 227, 150,0.8);
+        }
+
+        @keyframes toast-notif {
+            0% {transform: translateY(0px); opacity: 0;}
+            20% {transform: translateY(-10px); opacity: 1;}
+            80% {transform: translateY(-10px); opacity: 1;}
+            100%{transform: translateY(-20px); opacity: 0;}
+        }
+
         .next-btn, button {
             outline: none;
             @include shadow-block;
@@ -242,10 +270,11 @@ p {
             background: $primary-bg;
             border-radius: 0px 0px 6px 6px;
             height: 100%;
+            width: 100%;
             flex-grow: 1;
             text-align: left;
             padding: 0px;
-            overflow: hidden;
+            overflow: scroll;
 
             .monaco-editor, .monaco-editor-background, .monaco-editor .margin, .minimap-decorations-layer {
                 background: $primary-bg;
@@ -308,73 +337,65 @@ p {
   animation-duration: 0.5s;
 }
 
-
-/*---------- PROTESTER ----------*/
-@keyframes protestermove {
-  0% {transform: translate(0px,0px) scale(0.75)}
-  25% {transform: translate(0px,-20px) scale(0.75) }
-  50% {transform: translate(0px, 0px) scale(0.75) }
-  75% {transform: translate(0px,-20px) scale(0.75)}
-  100%{transform: translate(0px,0px) scale(0.75)}
+/*---------- WORLD ----------*/
+@keyframes worldgrow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(0.75);
+    }
 }
 
-.protester {
-  transform: scale(0.75);
-  animation: protestermove 4s infinite;
-  animation-delay:0.25s;
+@keyframes worldmove {
+    0% {transform: translate(0px,0px) scale(0.75)}
+    25% {transform: translate(0px,-20px) scale(0.75) }
+    50% {transform: translate(0px, 0px) scale(0.75) }
+    75% {transform: translate(0px,-20px) scale(0.75)}
+    100%{transform: translate(0px,0px) scale(0.75)}
 }
 
-/*---------- NOISE ----------*/
-@keyframes noisegrow {
-  0% {
-    transform: scale(0);
+.world {
+    transform: scale(0.75);
+    animation: worldgrow 1s, worldmove 4s infinite;
+    animation-delay: 0s, 1s;
+}
+
+@keyframes coronagrow {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(0.05);
+    }
   }
-  100% {
-    transform: scale(0.15);
-  }
+
+@keyframes coronamove {
+    0% {transform: translate(0px,0px) scale(0.05)}
+    25% {transform: translate(0px,-5px) scale(0.05) }
+    50% {transform: translate(0px, 0px) scale(0.05) }
+    75% {transform: translate(0px,-5px) scale(0.05)}
+    100%{transform: translate(0px,0px) scale(0.05)}
 }
 
-@keyframes noisemove {
-  0% {transform:rotate(-10deg) translate(0px,0px) scale(0.15)}
-  25% {transform:rotate(10deg) translate(0px,-10px) scale(0.15) }
-  50% {transform:rotate(-10deg) translate(0px, 0px) scale(0.15) }
-  75% {transform:rotate(10deg) translate(0px,-10px) scale(0.15)}
-  100%{transform:rotate(-10deg) translate(0px,0px) scale(0.15)}
+@keyframes spin {
+    from {
+        transform:scale(0.8) rotate(0deg);
+    }
+    to {
+        transform:scale(0.8) rotate(360deg);
+    }
+}
+  
+.corona {
+    position: absolute;
+    transform: scale(0.05);
+    animation: coronagrow 1s, coronamove 2s infinite;
+    animation-delay: 0s, 1s;
 }
 
-.noise {
-  transform: scale(0.15);
-  animation: noisegrow 0.5s, noisemove 1s infinite;
-  animation-delay:0s, 0.5s;
-}
-
-/*---------- FIST ----------*/
-@keyframes fistgrow {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(0.1);
-  }
-}
-
-@keyframes fistmove {
-  0% {transform: translate(0px,0px) scale(0.1)}
-  25% {transform: translate(0px,-10px) scale(0.1) }
-  50% {transform: translate(0px, 0px) scale(0.1) }
-  75% {transform: translate(0px,-10px) scale(0.1)}
-  100%{transform: translate(0px,0px) scale(0.1)}
-}
-
-.fist {
-  transform: scale(0.1);
-  animation: fistgrow 0.5s, fistmove 2s infinite;
-  animation-delay: 0s, 0.5s;
-}
-
-/*---------- SIGN ----------*/
-.sign {
-  transform: scale(0.1);
-  animation: fistgrow 0.5, fistmove 2s infinite;
-  animation-delay: 0s, 0.5s;
+.coronamutate {
+    position: relative;
+    transform: scale(0.8);
+    animation: spin 2s infinite;
 }

@@ -5,7 +5,7 @@ import {allModules} from '../objects/Modules';
 import CodeEditor from '../components/CodeEditor';
 import AuForestFire from '../components/AuForestFire';
 import BLMVisual from '../components/BLMVisual';
-
+import CoronaVisual from '../components/CoronaVisual';
 
 interface TutorialProps {
     id: number;
@@ -15,30 +15,36 @@ function TutorialPage({id}: TutorialProps) {
   const module = allModules[id-1];
   const nextModuleIndex = Number(id) + 1;
   const [questionNumber, setquestionNumber] = useState(0);
+  const [passQuestion, setPassQuestion] = useState(false);
+  const [failQuestion, setFailQuestion] = useState(false);
   const [description, setDescriptionVisibility] = useState(true);
-  
+
   const question = module.questions[questionNumber];
 
   useEffect(() => {
     setquestionNumber(0);
   }, [id]);
 
-  const checkCode = (event: React.FormEvent) => {
+  const checkCode = () => {
     let condensedCode = document.getElementById("editor")?.firstChild?.firstChild?.textContent?.replace(/\s+/g, '') || "";
     let resultingHTML = document.getElementById("result")?.children[0].innerHTML || "";
-
-    console.log(resultingHTML);
 
     let errors = []
 
     // check to see if code contains all the strings specified in question.answerStrings
     for(const s of question.answerStrings) {
       if(!condensedCode.includes(s.replace(/\s+/g, ''))) {
+        setFailQuestion(true);
+        // resets the fail toast notification
+        setTimeout(() => setFailQuestion(false), 2000);
         errors.push(`code doesn't contain '${s}'`)
       }
     }
 
-    if(resultingHTML.includes(question.answerHTML)) {
+    if(!resultingHTML.includes(question.answerHTML)) {
+      setFailQuestion(true);
+      // resets the fail toast notification
+      setTimeout(() => setFailQuestion(false), 2000);
       errors.push(`HTML doesn't match`)
     }
 
@@ -54,6 +60,9 @@ function TutorialPage({id}: TutorialProps) {
 
     // tests passed, goto next question
     if(errors.length === 0) {
+      setPassQuestion(true);
+      // resets the pass toast notification
+      setTimeout(() => setPassQuestion(false), 2000);
       setDescriptionVisibility(true)
       setquestionNumber(questionNumber + 1)
     }
@@ -82,8 +91,19 @@ function TutorialPage({id}: TutorialProps) {
                 </div>
             </div>
             <div className="code-editor">
-                <CodeEditor question={question}/>
+                {
+                    question !== undefined
+                    ? <CodeEditor question={question}/>
+                    : null
+                }
             </div>
+            {
+                passQuestion == true ? <div className="toast pass">Great Job!</div> : ""
+            }
+            {
+                failQuestion == true ? <div className="toast fail">Check your answer again!</div> : ""
+            }
+
             {
                 questionNumber < module.questions.length-1 ?
                 <button onClick={checkCode}>Submit</button>
@@ -105,6 +125,8 @@ function TutorialPage({id}: TutorialProps) {
           {
             id == 1 ?
             <AuForestFire id={questionNumber+1} />
+            : id == 2 ?
+            <CoronaVisual id={questionNumber+1} />
             : id == 3 ?
             <BLMVisual id={questionNumber+1} />
             : null
