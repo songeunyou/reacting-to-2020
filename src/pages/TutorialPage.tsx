@@ -23,11 +23,9 @@ function TutorialPage({id}: TutorialProps) {
     setquestionNumber(0);
   }, [id]);
 
-  const checkCode = (event: React.FormEvent) => {
+  const checkCode = () => {
     let condensedCode = document.getElementById("editor")?.firstChild?.firstChild?.textContent?.replace(/\s+/g, '') || "";
     let resultingHTML = document.getElementById("result")?.children[0].innerHTML || "";
-
-    console.log(resultingHTML);
 
     let errors = []
 
@@ -38,7 +36,7 @@ function TutorialPage({id}: TutorialProps) {
       }
     }
 
-    if(resultingHTML.includes(question.answerHTML)) {
+    if(!resultingHTML.includes(question.answerHTML)) {
       errors.push(`HTML doesn't match`)
     }
 
