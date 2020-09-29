@@ -106,7 +106,7 @@ function TutorialPage({id}: TutorialProps) {
             id == 1 ?
             <AuForestFire id={questionNumber+1} />
             : id == 2 ?
-            <CoronaVisual id={3} />
+            <CoronaVisual id={questionNumber+1} />
             : id == 3 ?
             <BLMVisual id={questionNumber+1} />
             : null
