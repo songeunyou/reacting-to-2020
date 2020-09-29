@@ -251,6 +251,18 @@ p {
                 background: $primary-bg;
             }
         }
+
+        .editor {
+            padding: 10px 30px !important;
+        }
+
+        textarea, textarea:focus {
+            outline: 0px;
+        }
+
+        .error {
+            margin: 20px 40px;
+        }
     }
 
     .visual {

@@ -246,6 +246,15 @@ p {
 .tutorial-page .info .code-editor .monaco-editor, .tutorial-page .info .code-editor .monaco-editor-background, .tutorial-page .info .code-editor .monaco-editor .margin, .tutorial-page .info .code-editor .minimap-decorations-layer {
   background: #1a161f;
 }
+.tutorial-page .info .editor {
+  padding: 10px 30px !important;
+}
+.tutorial-page .info textarea, .tutorial-page .info textarea:focus {
+  outline: 0px;
+}
+.tutorial-page .info .error {
+  margin: 20px 40px;
+}
 .tutorial-page .visual {
   border-radius: 6px;
   margin: 20px 10px;
