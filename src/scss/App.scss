@@ -90,6 +90,13 @@ p {
         position: fixed;
         bottom: 0px;
         margin: 40px;
+        a {
+            color: white;
+            transition: 0.1s;
+            &:hover {
+                color: $primary-bg;
+            }
+        }
         p {
             font-family: Obviously;
             color: white;
