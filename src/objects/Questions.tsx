@@ -169,7 +169,7 @@ const M2Q1s = `function Coronavirus() {
     // Declare a state variable for the first infected country
     // and a function to update the country
     const [] = React.useState();
-  
+
     return (
       <div>
               {/* Use your state below */}
@@ -178,7 +178,7 @@ const M2Q1s = `function Coronavirus() {
     );
   }
   render(Coronavirus);`;
-  
+
 const M2Q1a = `<p>There is a new case of COVID-19 in Wuhan</p>`;
 const M2Q1e = (
   <div className="explanation">
@@ -214,7 +214,7 @@ const M2Q2s = `function Coronavirus() {
       setTimeout(function(){
           // double the number of covid cases every 2 seconds
       }, 2000);
-  
+
     return (
       <div>
         <p>There are {covidCases} new global cases of COVID-19.</p>
@@ -355,20 +355,12 @@ const states = [
 	{
 	    "name": "Minnesota",
 	    "pop": 5.63
-	},
-	{
-	    "name": "Massachusetts",
-	    "pop": 6.89
-	},
-	{
-	    "name": "New Jersey",
-	    "pop": 8.88
 	}
 ]
 const res = <p>{[input]}</p>
 render(res);
 `;
-const M3Q2a = `<p>CaliforniaTexasFloridaWashingtonMinnesotaMassachusettsNew Jersey</p>`;
+const M3Q2a = `<p>CaliforniaTexasFloridaWashingtonMinnesota</p>`;
 const M3Q2e = (
   <div className="explanation">
     <h2>Lists</h2>
@@ -420,52 +412,19 @@ const states = [
       name: "Florida",
       pop: 21.48,
       content: "BLM"
-    },
-    {
-      id: 4,
-      name: "Washington",
-      pop: 7.62,
-      content: "BLM"
-    },
-    {
-      id: 5,
-      name: "Minnesota",
-      pop: 5.63,
-      content: "BLM"
-    },
-    {
-      id: 6,
-      name: "Massachusetts",
-      pop: 6.89,
-      content: "BLM"
-    },
-    {
-      id: 7,
-      name: "New Jersey",
-      pop: 8.88,
-      content: "BLM"
     }
   ];
   const Message = ({ state }) => {
-    return (
-      <li>
-        {state.name} now knows about {state.content}
-      </li>
-    );
+    return ( <li>{state.name} now knows about {state.content}</li> );
   };
-  
+
   const Movement = () => {
     return (
-      <div>
-        <h1> Message </h1>
-        <div>
-          <ul>
-            {states.[input]((state) => (
-              <Message key={state.id} [input]} />
-            ))}
-          </ul>
-        </div>
-      </div>
+      <ul>
+        {states.[input]((state) => (
+          <Message key={state.id} [input]} />
+        ))}
+      </ul>
     );
   };
 `;
@@ -474,10 +433,6 @@ const M3Q3a = `
 <li>California now knows about BLM</li>
 <li>Texas now knows about BLM</li>
 <li>Florida now knows about BLM</li>
-<li>Washington now knows about BLM</li>
-<li>Minnesota now knows about BLM</li>
-<li>Massachusetts now knows about BLM</li>
-<li>New Jersey now knows about BLM</li>
 `;
 
 const M3Q3e = (
