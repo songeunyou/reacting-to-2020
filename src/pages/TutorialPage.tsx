@@ -38,7 +38,7 @@ function TutorialPage({id}: TutorialProps) {
       }
     }
 
-    if(resultingHTML.includes(question.answerHTML)) {
+    if(!resultingHTML.includes(question.answerHTML)) {
       errors.push(`HTML doesn't match`)
     }
 
