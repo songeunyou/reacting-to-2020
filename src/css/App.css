@@ -247,7 +247,8 @@ p {
   background: #1a161f;
 }
 .tutorial-page .info .editor {
-  padding: 10px 30px !important;
+  padding: 10px 29px !important;
+  font-size: 15px !important;
 }
 .tutorial-page .info textarea, .tutorial-page .info textarea:focus {
   outline: 0px;
