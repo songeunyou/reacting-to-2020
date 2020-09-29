@@ -1,32 +1,52 @@
-import React, {useState} from 'react';
-import MonacoEditor from 'react-monaco-editor';
+import React, { useEffect, useRef, useState } from "react";
+import {
+  LiveEditor,
+  LiveError,
+  LivePreview,
+  LiveProvider,
+} from "react-live";
+import { Question } from "../objects/Questions";
+
+import "./CodeEditor.scss";
 
 interface CodeEditorProps {
-
+  question: Question,
 }
 
-function CodeEditor({}: CodeEditorProps) {
-    const [code, setCode] = useState<string>("");
-    const [editor, setEditor] = useState<any>(null);
+function CodeEditor({ question }: CodeEditorProps) {
+  const [code, setCode] = useState<string>(
+    `function Component () {
+  return (
+    <h3>
+      So functional. Much wow!
+    </h3>
+  )
+}
 
-    function editorDidMount(editor: any, monaco: any) {
-        setEditor(editor);
-    }
+render(
+  <Component />
+)`
+  );
 
-    const options = {
+  useEffect(() => {
+    // if a new question appears, update starter code
+    setCode(question.starterCode);
+  }, [question])
 
-    }
-    
-    return (
-        <MonacoEditor
-            language="javascript"
-            theme="vs-dark"
-            value={code}
-            options={options}
-            onChange={(newValue, e)=>setCode(newValue)}
-            editorDidMount={editorDidMount}
-        />
-    );
+
+  return (
+    <LiveProvider noInline={true} code={code}>
+      <div id="editor" className="editor">
+        <LiveEditor />
+      </div>
+      <div className="error">
+        <LiveError />
+      </div>
+      <div id="result" className="display">
+        <LivePreview />
+      </div>
+    </LiveProvider>
+  );
 }
 
 export default CodeEditor;

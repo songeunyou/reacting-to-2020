@@ -17,6 +17,7 @@
     "react-app-rewired": "^2.1.6",
     "react-code-blocks": "0.0.8",
     "react-dom": "^16.13.1",
+    "react-live": "^2.2.2",
     "react-monaco-editor": "^0.40.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",

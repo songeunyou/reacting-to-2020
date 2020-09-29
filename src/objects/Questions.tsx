@@ -7,6 +7,9 @@ export interface Question {
     explanation: JSX.Element;
     mission: string;
     answer: string;
+    starterCode: string;
+    answerHTML: string; // empty to disable
+    answerStrings: String[]; // list of strings that must be in the code (with no whitespace)
 }
 
 const M1Q1e =
@@ -21,11 +24,20 @@ const M1Q1e =
         />
     </div>
 
+const M1Q1s =
+`const forestName = "replace me!";
+const sign = <h1>Welcome to {  }!</h1>
+
+render(sign)`;
+
 const M1Q1: Question = {
     id: 1,
     explanation: M1Q1e,
     mission: "As you enter the woods, you see a sign that welcomes you to the Wollemi National Park. Create an element using JSX that displays 'Welcome to Wollemi National Park!'.",
-    answer: "."
+    answer: ".",
+    starterCode: M1Q1s,
+    answerHTML: "<h1>Welcome to Wollemi National Park!</h1>",
+    answerStrings: ["{ forestName }"]
 }
 
 const M1Q2e =
@@ -44,7 +56,10 @@ const M1Q2: Question = {
     id: 2,
     explanation: M1Q2e,
     mission: "You are ready to start setting the forest ablaze. Create a component called 'Fire' that contains a header that says 'Burning everything down!'.",
-    answer: "."
+    answer: ".",
+    starterCode: "",
+    answerHTML: "",
+    answerStrings: []
 }
 
 const M1Q3e =
@@ -63,7 +78,10 @@ const M1Q3: Question = {
     id: 3,
     explanation: M1Q3e,
     mission: "You are trying to set the rest of the forest on fire, but it's currently taking too long by creating one fire at a time. Make a new component LargeFire that contains three Fire components.",
-    answer: "M1Q3. The answer"
+    answer: "M1Q3. The answer",
+    starterCode: "",
+    answerHTML: "",
+    answerStrings: []
 }
 
 const M1Q4e =
@@ -76,7 +94,10 @@ const M1Q4: Question = {
     id: 4,
     explanation: M1Q4e,
     mission: "M1Q4. This is the fourth mission that you should accomplish",
-    answer: "M1Q4. The answer"
+    answer: "M1Q4. The answer",
+    starterCode: "",
+    answerHTML: "",
+    answerStrings: []
 }
 
 const M2Q1e =
@@ -96,14 +117,20 @@ const M2Q1: Question = {
     id: 1,
     explanation: M2Q1e,
     mission: "Use useState to initiate the first case of COVID-19 in Wuhan.",
-    answer: "M2Q1. The answer"
+    answer: "M2Q1. The answer",
+    starterCode: "",
+    answerHTML: "",
+    answerStrings: []
 }
 
 const M2Q2: Question = {
     id: 2,
     explanation: M2Q1e,
     mission: "Update the state so that COVID-19 spreads across the world!",
-    answer: "M2Q2. The answer"
+    answer: "M2Q2. The answer",
+    starterCode: "",
+    answerHTML: "",
+    answerStrings: []
 }
 
 const M2Q3e =
@@ -122,7 +149,10 @@ const M2Q3: Question = {
     id: 2,
     explanation: M2Q3e,
     mission: "Rewrite the COVID code to include useEffect.",
-    answer: "M2Q2. The answer"
+    answer: "M2Q2. The answer",
+    starterCode: "",
+    answerHTML: "",
+    answerStrings: []
 }
 
 const M3Q1e =
@@ -141,7 +171,10 @@ const M3Q1: Question = {
     id: 1,
     explanation: M3Q1e,
     mission: "The BLM movement has started. You are now responsible to notify others the details of this event. Notify one other place 1 state by passing down the details prop to the Friend component",
-    answer: "M3Q1. The answer"
+    answer: "M3Q1. The answer",
+    starterCode: "",
+    answerHTML: "",
+    answerStrings: []
 }
 
 const M3Q2e =
@@ -160,7 +193,10 @@ const M3Q2: Question = {
     id: 2,
     explanation: M3Q2e,
     mission: "You are trying to tell multiple people instead of a single friend about the details of the BLM movement. You need to find out which places you should head towards to make the most impact. Use the map method to output an array containing just the names of the objects inside the States array. (hint: call upon the name property of the objects)",
-    answer: "M3Q2. The answer"
+    answer: "M3Q2. The answer",
+    starterCode: "",
+    answerHTML: "",
+    answerStrings: []
 }
 
 const M3Q3e =
@@ -173,7 +209,10 @@ const M3Q3: Question = {
     id: 3,
     explanation: M3Q3e,
     mission: "M3Q3. This is the third mission that you should accomplish",
-    answer: "M3Q3. The answer"
+    answer: "M3Q3. The answer",
+    starterCode: "",
+    answerHTML: "",
+    answerStrings: []
 }
 
 export const M1Questions = [M1Q1, M1Q2, M1Q3, M1Q4];

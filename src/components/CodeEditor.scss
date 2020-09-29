@@ -1,0 +1,21 @@
+.code-editor {
+    background: rgb(50, 42, 56);
+    
+    .editor, .editor textarea {
+        background: rgb(50, 42, 56);
+        overflow: auto;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .error {
+        white-space: pre-wrap;
+        word-break: keep-all;
+        overflow-wrap: break-word;  
+    }
+
+    .display {
+        display: none;
+    }
+}
