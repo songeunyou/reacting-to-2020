@@ -1,0 +1,382 @@
+@font-face {
+  font-family: Obviously;
+  src: url("../fonts/Obviously-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: ObviouslyWide;
+  src: url("../fonts/Obviously-Wide.otf") format("opentype");
+}
+@font-face {
+  font-family: Obviously;
+  src: url("../fonts/Obviously-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: ObviouslyWide;
+  src: url("../fonts/Obviously-Wide.otf") format("opentype");
+}
+.App {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #E3C5AC;
+}
+
+p {
+  margin: 0px;
+}
+
+/*---------- HOMEPAGE ----------*/
+.home-page, .completed-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fade 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  margin-top: 60px;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+    margin-top: 60px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+.home-page .emojis, .completed-page .emojis {
+  font-size: 50px;
+  margin: 0px;
+}
+.home-page .title, .completed-page .title {
+  font-family: ObviouslyWide;
+  font-size: 50px;
+  color: white;
+  margin: 20px 0px 26px 0px;
+}
+.home-page .subtitle, .completed-page .subtitle {
+  font-size: 14px;
+  background: #140924;
+  color: #EAB286;
+  border-radius: 6px;
+  font-family: monospace;
+  padding: 12px 20px;
+  box-shadow: 0px 4px 10px -4px rgba(20, 9, 36, 0.8);
+}
+.home-page a, .completed-page a {
+  text-decoration: none;
+}
+.home-page .start-btn, .completed-page .start-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: solid 1px white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin: 30px 0px;
+  transition: 0.2s;
+}
+.home-page .start-btn:hover, .completed-page .start-btn:hover {
+  background: #EAB286;
+  margin: 20px 0px;
+  width: 100px;
+  height: 100px;
+}
+.home-page .credits, .completed-page .credits {
+  position: fixed;
+  bottom: 0px;
+  margin: 40px;
+}
+.home-page .credits p, .completed-page .credits p {
+  font-family: Obviously;
+  color: white;
+  margin: 4px;
+}
+
+/*---------- TUTORIAL PAGE ----------*/
+.module-1 {
+  background: #96ced4;
+}
+
+.module-2 {
+  background: #d9c293;
+}
+
+.module-3 {
+  background: #e0b09d;
+}
+
+.tutorial-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  padding: 60px;
+  display: flex;
+  transition: 1s;
+}
+.tutorial-page .mission {
+  display: flex;
+  text-align: left;
+  background: rgba(20, 9, 36, 0.8);
+  padding: 20px 40px;
+}
+.tutorial-page .mission h2 {
+  font-family: monospace;
+  margin: 0px;
+  margin-right: 18px;
+  font-size: 15px;
+}
+.tutorial-page .info {
+  display: flex;
+  margin: 20px 10px;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.tutorial-page .info .inst-module-1 {
+  background: #429ea8;
+}
+.tutorial-page .info .inst-module-2 {
+  background: #967635;
+}
+.tutorial-page .info .inst-module-3 {
+  background: #9c654f;
+}
+.tutorial-page .info .instructions {
+  position: relative;
+  color: white;
+  border-radius: 6px;
+  padding: 35px 40px;
+  color: white;
+  font-size: 16px;
+  padding: 0px;
+  border-radius: 6px 6px 0px 0px;
+  transition: 1s;
+}
+.tutorial-page .info .instructions .desc-btn {
+  position: absolute;
+  top: -2px;
+  right: 10px;
+  font-size: 12px;
+  padding: 4px 10px;
+  background: rgba(20, 9, 36, 0.1);
+  box-shadow: none;
+  border-radius: 4px;
+}
+.tutorial-page .info .instructions .desc-btn:hover {
+  background: rgba(20, 9, 36, 0.2);
+  transform: none;
+}
+.tutorial-page .info .instructions .desc-container {
+  transition: 1s;
+  height: auto;
+  overflow: hidden;
+}
+.tutorial-page .info .instructions .hide-desc {
+  height: 90px;
+}
+.tutorial-page .info .instructions .explanation {
+  padding: 35px 40px;
+}
+.tutorial-page .info .instructions .explanation h2 {
+  color: white;
+  font-family: ObviouslyWide;
+  font-size: 26px;
+  margin: 0px;
+  margin-bottom: 12px;
+}
+.tutorial-page .info .instructions .explanation p {
+  text-align: left;
+}
+.tutorial-page .info .instructions .explanation span {
+  margin-top: 16px;
+  background: #140924 !important;
+  text-align: left;
+}
+.tutorial-page .info .instructions .explanation span code {
+  font-size: 14px !important;
+  padding: 8px 14px !important;
+}
+.tutorial-page .info .next-btn, .tutorial-page .info button {
+  outline: none;
+  font-size: 14px;
+  background: #140924;
+  border-radius: 6px;
+  font-family: monospace;
+  padding: 12px 20px;
+  box-shadow: 0px 4px 10px -4px rgba(20, 9, 36, 0.8);
+  cursor: pointer;
+  background: #140924;
+  color: white;
+  border: none;
+  margin-top: 12px;
+  padding: 10px 20px;
+  transition: 0.1s;
+}
+.tutorial-page .info .next-btn:hover, .tutorial-page .info button:hover {
+  transform: translateY(-2px);
+}
+.tutorial-page .info .next-btn {
+  margin-top: 20px;
+}
+.tutorial-page .info .next-btn a {
+  text-decoration: none;
+  color: white;
+}
+.tutorial-page .info .code-editor {
+  color: white;
+  border-radius: 6px;
+  padding: 35px 40px;
+  background: #140924;
+  border-radius: 0px 0px 6px 6px;
+  height: 100%;
+  flex-grow: 1;
+  text-align: left;
+  padding: 0px;
+  overflow: hidden;
+}
+.tutorial-page .info .code-editor .monaco-editor, .tutorial-page .info .code-editor .monaco-editor-background, .tutorial-page .info .code-editor .monaco-editor .margin, .tutorial-page .info .code-editor .minimap-decorations-layer {
+  background: #140924;
+}
+.tutorial-page .visual {
+  border-radius: 6px;
+  margin: 20px 10px;
+  width: 100%;
+  background-color: #198ed1;
+  background-image: linear-gradient(20deg, #198ed1 0%, #67bfb5 100%);
+}
+
+.callout {
+  background: #140924;
+  border-radius: 4px;
+  display: flex;
+  padding: 10px 12px;
+  margin: 20px 0px;
+}
+.callout p {
+  text-align: left;
+  color: #EAB286;
+  font-size: 14px;
+  font-family: monospace;
+}
+.callout p:first-of-type {
+  margin-right: 16px;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.appear {
+  animation: grow;
+  animation-duration: 0.5s;
+}
+
+/*---------- PROTESTER ----------*/
+@keyframes protestermove {
+  0% {
+    transform: translate(0px, 0px) scale(0.75);
+  }
+  25% {
+    transform: translate(0px, -20px) scale(0.75);
+  }
+  50% {
+    transform: translate(0px, 0px) scale(0.75);
+  }
+  75% {
+    transform: translate(0px, -20px) scale(0.75);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(0.75);
+  }
+}
+.protester {
+  transform: scale(0.75);
+  animation: protestermove 4s infinite;
+  animation-delay: 0.25s;
+}
+
+/*---------- NOISE ----------*/
+@keyframes noisegrow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.15);
+  }
+}
+@keyframes noisemove {
+  0% {
+    transform: rotate(-10deg) translate(0px, 0px) scale(0.15);
+  }
+  25% {
+    transform: rotate(10deg) translate(0px, -10px) scale(0.15);
+  }
+  50% {
+    transform: rotate(-10deg) translate(0px, 0px) scale(0.15);
+  }
+  75% {
+    transform: rotate(10deg) translate(0px, -10px) scale(0.15);
+  }
+  100% {
+    transform: rotate(-10deg) translate(0px, 0px) scale(0.15);
+  }
+}
+.noise {
+  transform: scale(0.15);
+  animation: noisegrow 0.5s, noisemove 1s infinite;
+  animation-delay: 0s, 0.5s;
+}
+
+/*---------- FIST ----------*/
+@keyframes fistgrow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.1);
+  }
+}
+@keyframes fistmove {
+  0% {
+    transform: translate(0px, 0px) scale(0.1);
+  }
+  25% {
+    transform: translate(0px, -10px) scale(0.1);
+  }
+  50% {
+    transform: translate(0px, 0px) scale(0.1);
+  }
+  75% {
+    transform: translate(0px, -10px) scale(0.1);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(0.1);
+  }
+}
+.fist {
+  transform: scale(0.1);
+  animation: fistgrow 0.5s, fistmove 2s infinite;
+  animation-delay: 0s, 0.5s;
+}
+
+/*---------- SIGN ----------*/
+.sign {
+  transform: scale(0.1);
+  animation: fistgrow 0.5, fistmove 2s infinite;
+  animation-delay: 0s, 0.5s;
+}
+
+/*# sourceMappingURL=App.css.map */

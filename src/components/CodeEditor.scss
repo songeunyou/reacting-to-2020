@@ -1,14 +1,19 @@
 .code-editor {
-    box-sizing: border-box!important;
-    width: 100%!important;
+    // box-sizing: border-box!important;
+    // width: 100%!important;
+    background: rgb(50, 42, 56);
     
-    .editor, .editor div:first-child {
+    .editor, .editor textarea {
         background: rgb(50, 42, 56);
         overflow: auto;
-        height: 100%;
+        // height: 100%;
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
+    }
+
+    .editor div:first-child {
+        // height: 100%;
     }
     
     .error {
