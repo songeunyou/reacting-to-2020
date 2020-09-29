@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../scss/Australia.scss';
+import '../scss/Protest.scss';
 import {allModules} from '../objects/Modules';
 import CodeEditor from '../components/CodeEditor';
 import AuForestFire from '../components/AuForestFire';
