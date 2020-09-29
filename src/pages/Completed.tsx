@@ -14,7 +14,7 @@ function Completed() {
         </Link>
         <div className="credits">
             <p>Brought to you by</p>
-            <p>Gull Requests</p>
+            <p>♥ <a href="https://github.com/suminkimm">Su Min Kim</a>, <a href="https://github.com/StuffByLiang">Liang Liu</a>, <a href="https://github.com/JustinSo1">Justin So</a>, <a href="https://github.com/songeunyou">Song You</a> ♥</p>
         </div>
     </div>
   );

@@ -95,6 +95,13 @@ p {
   bottom: 0px;
   margin: 40px;
 }
+.home-page .credits a, .completed-page .credits a {
+  color: white;
+  transition: 0.1s;
+}
+.home-page .credits a:hover, .completed-page .credits a:hover {
+  color: #1a161f;
+}
 .home-page .credits p, .completed-page .credits p {
   font-family: Obviously;
   color: white;
