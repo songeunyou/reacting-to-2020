@@ -15,8 +15,10 @@ function TutorialPage({id}: TutorialProps) {
   const module = allModules[id-1];
   const nextModuleIndex = Number(id) + 1;
   const [questionNumber, setquestionNumber] = useState(0);
+  const [passQuestion, setPassQuestion] = useState(false);
+  const [failQuestion, setFailQuestion] = useState(false);
   const [description, setDescriptionVisibility] = useState(true);
-  
+
   const question = module.questions[questionNumber];
 
   useEffect(() => {
@@ -34,11 +36,17 @@ function TutorialPage({id}: TutorialProps) {
     // check to see if code contains all the strings specified in question.answerStrings
     for(const s of question.answerStrings) {
       if(!condensedCode.includes(s.replace(/\s+/g, ''))) {
+        setFailQuestion(true);
+        // resets the fail toast notification
+        setTimeout(() => setFailQuestion(false), 2000);
         errors.push(`code doesn't contain '${s}'`)
       }
     }
 
     if(resultingHTML.includes(question.answerHTML)) {
+      setFailQuestion(true);
+      // resets the fail toast notification
+      setTimeout(() => setFailQuestion(false), 2000);
       errors.push(`HTML doesn't match`)
     }
 
@@ -54,6 +62,9 @@ function TutorialPage({id}: TutorialProps) {
 
     // tests passed, goto next question
     if(errors.length === 0) {
+      setPassQuestion(true);
+      // resets the pass toast notification
+      setTimeout(() => setPassQuestion(false), 2000);
       setDescriptionVisibility(true)
       setquestionNumber(questionNumber + 1)
     }
@@ -84,6 +95,13 @@ function TutorialPage({id}: TutorialProps) {
             <div className="code-editor">
                 <CodeEditor question={question}/>
             </div>
+            {
+                passQuestion == true ? <div className="toast pass">Great Job!</div> : ""
+            }
+            {
+                failQuestion == true ? <div className="toast fail">Check your answer again!</div> : ""
+            }
+
             {
                 questionNumber < module.questions.length-1 ?
                 <button onClick={checkCode}>Submit</button>
