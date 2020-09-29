@@ -5,7 +5,7 @@ import {allModules} from '../objects/Modules';
 import CodeEditor from '../components/CodeEditor';
 import AuForestFire from '../components/AuForestFire';
 import BLMVisual from '../components/BLMVisual';
-
+import CoronaVisual from '../components/CoronaVisual';
 
 interface TutorialProps {
     id: number;
@@ -125,6 +125,8 @@ function TutorialPage({id}: TutorialProps) {
           {
             id == 1 ?
             <AuForestFire id={questionNumber+1} />
+            : id == 2 ?
+            <CoronaVisual id={questionNumber+1} />
             : id == 3 ?
             <BLMVisual id={questionNumber+1} />
             : null

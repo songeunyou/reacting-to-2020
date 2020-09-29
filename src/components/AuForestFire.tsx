@@ -15,7 +15,7 @@ function AuForestFire({id}: AuForestFireProps) {
             return (
                 <div>
                     <h1 className="wollemi-welcome appear">Welcome to Wollemi National Park</h1>
-                    <Park className="park" style={{position: "relative", bottom: "40px"}}/>
+                    <Park className="protester" style={{position: "relative", bottom: "40px"}}/>
                 </div>
             )
         case 2:
