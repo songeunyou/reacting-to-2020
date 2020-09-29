@@ -136,8 +136,10 @@ p {
   font-size: 15px;
 }
 .tutorial-page .info {
+  position: relative;
   display: flex;
   margin: 20px 10px;
+  align-items: center;
   flex-direction: column;
   flex-grow: 1;
 }
@@ -205,6 +207,46 @@ p {
   font-size: 14px !important;
   padding: 8px 14px !important;
 }
+.tutorial-page .info .toast {
+  font-size: 14px;
+  background: #140924;
+  border-radius: 6px;
+  font-family: monospace;
+  padding: 12px 20px;
+  box-shadow: 0px 4px 10px -4px rgba(20, 9, 36, 0.8);
+  background: #eb7831;
+  padding: 8px 16px;
+  color: white;
+  box-shadow: 0px 2px 8px -2px rgba(235, 120, 49, 0.8);
+  position: absolute;
+  bottom: 60px;
+  animation-name: toast-notif;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.tutorial-page .info .pass {
+  background: #3de396;
+  box-shadow: 0px 2px 8px -2px rgba(61, 227, 150, 0.8);
+}
+@keyframes toast-notif {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
 .tutorial-page .info .next-btn, .tutorial-page .info button {
   outline: none;
   font-size: 14px;
@@ -238,6 +280,7 @@ p {
   background: #140924;
   border-radius: 0px 0px 6px 6px;
   height: 100%;
+  width: 100%;
   flex-grow: 1;
   text-align: left;
   padding: 0px;
