@@ -21,14 +21,14 @@ function AuForestFire({id}: AuForestFireProps) {
         case 2:
             return (
                 <div>
-                    <Australia style={{position: "relative", transform: "scale(0.6)", bottom: "30px"}}/>
+                    <Australia style={{position: "relative", transform: "scale(0.6)", bottom: "-20px"}}/>
                     <Fire style={{top: "380px", marginLeft: "430px"}}/>
                 </div>
             )
         case 3:
             return (
                 <div>
-                    <Australia style={{position: "relative", transform: "scale(0.6)", bottom: "30px"}}/>
+                    <Australia style={{position: "relative", transform: "scale(0.6)", bottom: "-20px"}}/>
                     <Fire style={{top: "380px", marginLeft: "430px"}}/>
                     <Fire style={{top: "280px", marginLeft: "430px"}}/>
                     <Fire style={{top: "230px", marginLeft: "310px"}}/>
@@ -40,7 +40,7 @@ function AuForestFire({id}: AuForestFireProps) {
         case 4:
             return (
                 <div>
-                    <Australia style={{position: "relative", transform: "scale(0.6)", bottom: "30px"}}/>
+                    <Australia style={{position: "relative", transform: "scale(0.6)", bottom: "-20px"}}/>
                     <Fire style={{top: "380px", marginLeft: "430px"}}/>
                     <Fire style={{top: "280px", marginLeft: "430px"}}/>
                     <Fire style={{top: "230px", marginLeft: "310px"}}/>

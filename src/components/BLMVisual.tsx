@@ -21,7 +21,7 @@ function BLMVisual({id}: BLMVisualProps) {
         case 2:
             return (
                 <div>
-                <USA style={{position:"relative", top:"120px"}}/>
+                <USA style={{position:"relative", top:"160px"}}/>
                 <Noise className="noise" style={{position:"absolute", marginLeft:"-700px"}}/>
                 <Noise className="noise" style={{position:"absolute", top:"-10px", marginLeft:"-600px"}}/>
 
@@ -35,7 +35,7 @@ function BLMVisual({id}: BLMVisualProps) {
         case 3:
             return (
                 <div>
-                    <USA style={{position:"relative", top:"120px"}}/>
+                    <USA style={{position:"relative", top:"160px"}}/>
                     <Fist className="fist" style={{position:"absolute", marginLeft:"-700px"}}/>
                     <PicketSign className="sign" style={{position:"absolute", top:"-15px", marginLeft:"-700px"}}/>
                     <PicketSign className="sign" style={{position:"absolute", top:"150px", marginLeft:"-680px"}}/>
@@ -59,7 +59,7 @@ function BLMVisual({id}: BLMVisualProps) {
                 <div>
                     <USA style={{position:"relative", top:"120px"}}/>
                 </div>
-                
+
             )
     }
 }
