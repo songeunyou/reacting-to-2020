@@ -20,14 +20,14 @@ function CoronaVisual({id}: CoronaVisualProps) {
         case 1:
             return (
                 <div>
-                    <World style={{transform: "scale(0.9)"}}/>
+                    <World style={{transform: "scale(0.9)  translateY(50px)", bottom: "-20px"}}/>
                     <Corona className="corona" style={{position:"absolute", marginLeft:"-400px"}}/>
                 </div>
             )
         case 2:
             return (
                 <div>
-                    <World style={{transform: "scale(0.9)"}}/>
+                    <World style={{transform: "scale(0.9) translateY(50px)" }}/>
                     <Corona className="corona" style={{top:"160px", marginLeft:"-360px"}}/>
                     <Corona className="corona" style={{top:"15px", marginLeft:"-380px"}}/>
                     <Corona className="corona" style={{marginLeft:"-400px"}}/>
