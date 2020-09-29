@@ -21,15 +21,15 @@ function BLMVisual({id}: BLMVisualProps) {
         case 2:
             return (
                 <div>
-                <USA style={{position:"relative", top:"160px"}}/>
-                <Noise className="noise" style={{position:"absolute", marginLeft:"-700px"}}/>
-                <Noise className="noise" style={{position:"absolute", top:"-10px", marginLeft:"-600px"}}/>
+                <USA style={{transform:"scale(0.8)", position:"relative", top:"160px"}}/>
+                <Noise className="noise" style={{position:"absolute", marginLeft:"-660px"}}/>
+                <Noise className="noise" style={{position:"absolute", top:"100px", marginLeft:"-600px"}}/>
 
-                <Noise className="noise" style={{position:"absolute", marginLeft:"-480px"}}/>
+                <Noise className="noise" style={{position:"absolute", top:"50px", marginLeft:"-480px"}}/>
                 <Noise className="noise" style={{position:"absolute", top:"200px", marginLeft:"-520px"}}/>
 
-                <Noise className="noise" style={{position:"absolute", top:"50px", marginLeft:"-320px"}}/>
-                <Noise className="noise" style={{position:"absolute", top:"180px", marginLeft:"-340px"}}/>
+                <Noise className="noise" style={{position:"absolute", top:"50px", marginLeft:"-350px"}}/>
+                <Noise className="noise" style={{position:"absolute", top:"160px", marginLeft:"-370px"}}/>
                 </div>
             )
         case 3:
