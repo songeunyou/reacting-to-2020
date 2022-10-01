@@ -136,12 +136,8 @@ function [input]() {
 }
 render(Boat);`;
 
-const M1Q4a = `
-<div>
-<h1>All of the people</h1>
-<h1>All of the animals</h1>
-</div>
-`;
+// to match user output with M1Q4: Question.answerHTML"
+const M1Q4a = "<div><h1>All of the people</h1><h1>All of the animals</h1></div>";
 
 const M1Q4e = (
   <div className="explanation">
