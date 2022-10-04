@@ -466,11 +466,7 @@ const states = [
   };
 `;
 
-const M3Q3a = `
-<li>California now knows about BLM</li>
-<li>Texas now knows about BLM</li>
-<li>Florida now knows about BLM</li>
-`;
+const M3Q3a = "<ul><li>California now knows about BLM</li><li>Texas now knows about BLM</li><li>Florida now knows about BLM</li></ul>";
 
 const M3Q3e = (
   <div className="explanation">
