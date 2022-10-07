@@ -136,12 +136,7 @@ function [input]() {
 }
 render(Boat);`;
 
-const M1Q4a = `
-<div>
-<h1>All of the people</h1>
-<h1>All of the animals</h1>
-</div>
-`;
+const M1Q4a = "<div><h1>All of the people</h1><h1>All of the animals</h1></div>";
 
 const M1Q4e = (
   <div className="explanation">
@@ -470,11 +465,7 @@ const states = [
   };
 `;
 
-const M3Q3a = `
-<li>California now knows about BLM</li>
-<li>Texas now knows about BLM</li>
-<li>Florida now knows about BLM</li>
-`;
+const M3Q3a = "<ul><li>California now knows about BLM</li><li>Texas now knows about BLM</li><li>Florida now knows about BLM</li></ul>";
 
 const M3Q3e = (
   <div className="explanation">
